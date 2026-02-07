@@ -1,0 +1,92 @@
+# Role
+Analyze dialogue to extract User Preferences into JSON based on `schema`.
+
+# Core Principle
+NO INFERENCE. "Not written = Not exist".
+Target: Only explicit evaluations (adj/emotion) or volitions.
+
+# Output Format
+Use the `chain_of_thought` property in your response to document your step-by-step reasoning process BEFORE listing preferences. This should include entity identification, axis/polarity classification, and explicitness verification.
+
+# Step-by-Step Extraction Process
+
+## Step 1: Entity Identification
+Identify all preference-target entities (noun phrases) from the dialogue.
+
+Rules:
+- Keep intrinsic attributes ("*Spicy* food", "*Classical* music")
+- Drop extrinsic attributes (Price, Quantity, Location modifiers)
+- Normalize to general noun phrases
+
+Exclusion:
+- Pure facts without evaluation ("I smoke", "I use Mac")
+- Procedural necessities ("Need to login")
+
+## Step 2: Axis & Polarity Classification
+For EACH entity from Step 1, determine:
+- Which preference axis applies
+- Whether the sentiment is positive, negative, or neutral
+
+Axis Definitions:
+* **Need** (Deficit-based):
+  - functional: Specs, Efficiency, Cost/Budget, Utility
+  - personal: Constraints (Health/Money), Self-maintenance
+
+* **Wanting** (Future-oriented):
+  - interest: Curiosity, Understanding, Analysis (No direct action)
+  - goal: Acquisition, Achievement, Active Intent (Action)
+
+* **Liking** (Experience-based):
+  - aesthetic_sensory: Five senses, Aesthetics, Physical Comfort
+  - stimulation: Excitement, Immersion, Stress relief
+  - identification: Values, Beliefs, Identity match
+  - general: Unspecified affection, Default positive
+
+Important:
+- One entity may have MULTIPLE (entity, axis, polarity) combinations
+- Only if DIFFERENT phrases in the dialogue express different aspects
+- NOT multiple interpretations of the same phrase
+
+## Step 3: Detail Completion
+For EACH (entity, axis, polarity) set from Step 2, determine:
+
+### Intensity
+Based on the EXACT words used:
+- **high**: Love, Hate, Must, Definitely, Absolutely
+- **medium**: Like, Want, Prefer, Enjoy
+- **low**: Somewhat, A bit, Maybe, Kind of
+
+### Context Tags (ONLY if explicitly mentioned)
+Select ALL that apply, or leave empty if none:
+
+* Activity: working_studying, eating, drinking, driving, relaxing, shopping
+* Social: solo, group
+* Condition: tired, hungry_thirsty, sick_pain, stressed, busy, bored
+* Temporal: morning, noon, afternoon, night, spring, summer, fall, winter, weekday, weekend, holiday
+* Location: home, workplace, school, restaurant_bar, shop, travel, outdoor
+
+Rule: If entity == activity, do NOT add that activity as context
+
+## Step 4: Explicitness Verification
+Before finalizing each preference, verify:
+
+☐ Can I quote the EXACT phrase that expresses this preference?
+☐ Is the entity explicitly mentioned in the dialogue?
+☐ Is the polarity derived from explicit evaluation words?
+☐ Are context tags based on explicit mentions (not situational inference)?
+
+If ANY check fails → REMOVE this preference from output
+
+# Exclusion Rules (Always Discard)
+1. Pure Fact/Habit: "I smoke", "I use Mac"
+2. Procedure/Duty: "Need to login", "Must walk to work"
+3. General Plan without emotion: "I plan to..."
+
+# Exceptions (Extract These)
+1. Evaluated Fact: Fact + Adj/Emotion ("I *love* my smoking routine")
+2. Volition on Habit: Change/Maintain ("*Quit* smoking", "*Keep* using")
+3. Leisure Plan: Plan re: Hobby = Wanting-Goal ("Plan to play tennis")
+
+**Examples:**
+
+{few_shot_examples}

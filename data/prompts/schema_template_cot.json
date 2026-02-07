@@ -1,0 +1,121 @@
+{
+  "name": "preference_extraction_cot",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "chain_of_thought": {
+        "type": "string",
+        "description": "Step-by-step reasoning: 1) Identify entities, 2) Classify axis/polarity for each, 3) Determine intensity/context, 4) Verify explicitness. Document your thinking process here."
+      },
+      "dialogue_id": {
+        "type": "integer"
+      },
+      "user_id": {
+        "type": "string"
+      },
+      "preferences": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "combined_axis": {
+              "type": "string",
+              "description": "The specific evaluation axis combining the main axis and sub-axis.",
+              "enum": [
+                "liking__aesthetic_sensory",
+                "liking__stimulation",
+                "liking__identification",
+                "liking__general",
+                "wanting__interest",
+                "wanting__goal",
+                "need__functional",
+                "need__personal"
+              ]
+            },
+            "entity": {
+              "type": "string",
+              "description": "Specific object/concept (normalized noun)."
+            },
+            "original_mention": {
+              "type": "string"
+            },
+            "context_tags": {
+              "type": "array",
+              "description": "Select ALL applicable context tags. If none apply, return an empty list.",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "activity-working_studying",
+                  "activity-eating",
+                  "activity-drinking",
+                  "activity-driving",
+                  "activity-relaxing",
+                  "activity-shopping",
+                  "social-solo",
+                  "social-group",
+                  "condition-tired",
+                  "condition-hungry_thirsty",
+                  "condition-sick_pain",
+                  "condition-stressed",
+                  "condition-busy",
+                  "condition-bored",
+                  "temporal-morning",
+                  "temporal-noon",
+                  "temporal-afternoon",
+                  "temporal-night",
+                  "temporal-spring",
+                  "temporal-summer",
+                  "temporal-fall",
+                  "temporal-winter",
+                  "temporal-weekday",
+                  "temporal-weekend",
+                  "temporal-holiday",
+                  "location-home",
+                  "location-workplace",
+                  "location-school",
+                  "location-restaurant_bar",
+                  "location-shop",
+                  "location-travel",
+                  "location-outdoor"
+                ]
+              }
+            },
+            "polarity": {
+              "type": "string",
+              "enum": [
+                "positive",
+                "negative",
+                "neutral"
+              ]
+            },
+            "intensity": {
+              "type": "string",
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          },
+          "required": [
+            "combined_axis",
+            "entity",
+            "original_mention",
+            "context_tags",
+            "polarity",
+            "intensity"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "chain_of_thought",
+      "dialogue_id",
+      "user_id",
+      "preferences"
+    ],
+    "additionalProperties": false
+  }
+}

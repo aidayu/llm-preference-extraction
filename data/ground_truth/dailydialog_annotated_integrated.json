@@ -1,0 +1,1531 @@
+[
+    {
+        "dialogue_id": 0,
+        "original_index": 1815,
+        "original_dialogue": "System: I think modern painting means nothing .\nUser: I think so too . It's just pointless .\nSystem: Then why are so many crazy about it\nUser: I don't know.Maybe they are really crazy .\nSystem: Maybe .",
+        "translated_dialogue": "System: 現代絵画なんて意味ないと思うよ。\nUser: そう思うよ。ただただ無意味だ。\nSystem: じゃあなんであんなに熱狂するんだ？\nUser: わからない。たぶん本当に頭がおかしいんだろう。\nSystem: そうかもね。",
+        "annotations": [
+            {
+                "entity": "modern painting",
+                "axis": "liking",
+                "sub_axis": "identification",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 1,
+        "original_index": 39,
+        "original_dialogue": "System: I feel like going for a drink , it's been a long day .\nUser: Great idea ! Peter , I could use the drink .\nSystem: How about the new bar across road ?\nUser: Sounds good . The food there is fantastic , too .\nSystem: I agree , I had lunch there last week .\nUser: excellent ! That sounds like a plan .",
+        "translated_dialogue": "System: 飲みに行きたい気分だ、今日は長い一日だった。\nUser: いいアイデアだ！ピーター、私も一杯飲みたいところだ。\nSystem: 向かいの新しいバーはどう？\nUser: 良さそうだ。そこの料理も素晴らしいんだ。\nSystem: そうだな、先週そこでランチを食べたんだ。\nUser: 素晴らしい！それで行こう。",
+        "annotations": [
+            {
+                "entity": "drink",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Tired"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "new bar",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Tired"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "food",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "Bar"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 2,
+        "original_index": 9248,
+        "original_dialogue": "System: What are you thinking ?\nUser: I ’ m thinking about where we shall spend our vocation .\nSystem: It ’ s about 7 o ’ clock . let ’ s have our breakfast first .\nUser: Ok , dear.We will be late .\nSystem: What do you want ?\nUser: A ham salad sandwich .\nSystem: Sorry , I didn ’ t prepare this .\nUser: Then , I ’ d like some eggs and bread for breakfast instead .\nSystem: Ok , I ’ ll have it sent to you immediately .",
+        "translated_dialogue": "System: 何を考えてるの？\nUser: 休暇をどこで過ごそうか考えてるの。\nSystem: もう7時くらいよ。まずは朝食をとりましょう。\nUser: わかったわ、あなた。遅れてしまうよ。\nSystem: 何がいい？\nUser: ハムサラダサンドイッチ。\nSystem: ごめん、用意してないんだ。\nUser: じゃあ代わりに、朝食に卵とパンがいいな。\nSystem: わかった、すぐに届けてもらうよ。",
+        "annotations": [
+            {
+                "entity": "ham salad sandwich",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Morning"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "egg",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Morning"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "bread",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Morning"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 3,
+        "original_index": 5583,
+        "original_dialogue": "System: Can I take your order please ?\nUser: Can I get a burger and a large fries ?\nSystem: Sure . Anything to drink with that ?\nUser: A large coke , please .\nSystem: Eating here or to go ?\nUser: Eating here , please .\nSystem: That's 7 dollars and 25 cents . You can get free refills with your coke .",
+        "translated_dialogue": "System: ご注文をお伺いしてもよろしいですか？\nUser: バーガーとラージサイズのフライドポテトをお願いします。\nSystem: 承知いたしました。お飲み物は何かお付けしますか？\nUser: ラージサイズのコーラをお願いします。\nSystem: 店内でお召し上がりですか？それともお持ち帰りですか？\nUser: 店内でお願いします。\nSystem: 合計7ドル25セントになります。コーラは無料でお代わりいただけます。",
+        "annotations": [
+            {
+                "entity": "burger",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "large fries",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "large coke",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 4,
+        "original_index": 11048,
+        "original_dialogue": "System: Oh ! My mouth is on fire !\nUser: I feel so good . That warm hot pot certainly hits the spot on winter nights .\nSystem: I need more water !\nUser: Oooo ... gross ... you're sweating all over the place .\nSystem: It's your fault for mixing the two broths !\nUser: You're going to have a little Montezuma's revenge tomorrow morning .",
+        "translated_dialogue": "System: あっ！口が火傷しそう！\nUser: 最高に気持ちいいよ。冬の夜にはやっぱり温かい鍋が最高だね。\nSystem: 水がもっと欲しい！\nUser: うわっ…気持ち悪い…全身汗だくじゃないか。\nSystem: 二つのスープを混ぜたお前が悪いんだ！\nUser: 明日の朝はちょっとおならがひどくなるぞ。",
+        "annotations": [
+            {
+                "entity": "warm hot pot",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "Winter",
+                    "Night"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 5,
+        "original_index": 4201,
+        "original_dialogue": "System: Hey Joanne . What are you up to ?\nUser: I'm just watching some television .\nSystem: I'm so bored . I don't know what I'm going to do today and it is only ten in the morning .\nUser: Me too . Do you think we are boring people ?\nSystem: I don't think we are boring . It's just that we don't have any hobbies .\nUser: That's right . What do you think we should do as a hobby ?\nSystem: That all depends on what you like to do . For example , I like to doodle on the notepad , so I'm thinking about doing some real drawings .\nUser: I like to play the piano for fun .\nSystem: Yeah . That can be a good hobby .\nUser: Hobbies are great . I'm going to make a list of all the things I like to do .\nSystem: That's a great idea . I'm going to do the same .",
+        "translated_dialogue": "System: ねえジョアン。何してるの？\nUser: テレビ見てるだけよ。\nSystem: すごく退屈だわ。今日は何しようか迷ってるのに、まだ午前10時よ。\nUser: 私もよ。私たちってつまらない人間だと思う？\nSystem: 退屈な人間だとは思わないよ。ただ趣味がないだけさ。\nUser: そうだね。趣味として何をやろうか？\nSystem: それは君が好きなことによるよ。例えば僕はメモ帳に落書きするのが好きだから、ちゃんとした絵を描いてみようかなって思ってる。\nUser: 私は趣味でピアノを弾くのが好き。\nSystem: うん、それも良い趣味になりそう。\nUser: 趣味って素晴らしいよね。好きなことを全部リストにしてみようと思う。\nSystem: いいアイデアだね。僕も同じことをするよ。",
+        "annotations": [
+            {
+                "entity": "watching television",
+                "axis": "liking",
+                "sub_axis": "stimulation",
+                "polarity": "negative",
+                "intensity": "high",
+                "context": [
+                    "Morning"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "piano",
+                "axis": "liking",
+                "sub_axis": "stimulation",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 6,
+        "original_index": 4048,
+        "original_dialogue": "System: Hi , Kenji .\nUser: Hi , Debbie . Have a seat . How's it going ?\nSystem: I'm OK . How are you doing ?\nUser: Pretty good . Listen ... have you heard about the new Thai restaurant over on University Avenue ?\nSystem: Do you mean The Bangkok ?\nUser: That's the one . A bunch of us are going there for dinner tomorrow night.How about coming with us ?\nSystem: Sure , I'd love to .\nUser: Great . I'll call and make reservations .\nSystem: Any time after 6 o'clock is good for me.Oh ! I'm late ! I have a class .\nUser: All right . I'll call you tonight and tell you the time .\nSystem: Great . Talk to you then .",
+        "translated_dialogue": "System: やあ、ケンジ。\nUser: やあ、デビー。座って。調子はどう？\nSystem: 大丈夫だよ。君はどう？\nUser: かなり良いよ。聞いてくれ…ユニバーシティ通りに新しいタイ料理レストランができたのを知ってる？\nSystem: ザ・バンコクのこと？\nUser: それだ。明日夜、みんなで夕食に行くんだ。一緒にどう？\nSystem: もちろん、喜んで。\nUser: いいね。電話して予約しておくよ。\nSystem: 6時以降ならいつでも大丈夫。あ！遅刻だ！授業があるんだ。\nUser: わかった。今夜電話して時間を伝えるよ。\nSystem: 素晴らしい。じゃあまたね。",
+        "annotations": [
+            {
+                "entity": "new Thai restaurant over on University Avenue",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "group",
+                    "Night"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "The Bankok",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "group",
+                    "Night"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 7,
+        "original_index": 4586,
+        "original_dialogue": "System: I think I'm going to China this vacation.How about you ?\nUser: Me ? I prefer France .\nSystem: I went to France last summer .\nUser: Oh , really ? I went to China last winter !",
+        "translated_dialogue": "System: 今度の休暇は中国に行こうと思うんだ。君は？\nUser: 私？私はフランスの方が好きだわ。\nSystem: 私は去年の夏にフランスに行ったよ。\nUser: ああ、そうなの？私は去年の冬に中国に行ったわ！",
+        "annotations": [
+            {
+                "entity": "France",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 8,
+        "original_index": 8162,
+        "original_dialogue": "System: Wow , you ’ re up early today ! What ’ s for breakfast ?\nUser: Well , I felt like baking , so I made some muffins .\nSystem: Smells good ! I ’ ll make some coffee . Do you want me to make you some eggs ?\nUser: Sure , I'll take mine , sunny side up .\nSystem: Www , I don ’ t know how you can eat your eggs like that ! Ever since I was small , I ’ Ve had eggs and soldiers .\nUser: You know , my dad had scrambled eggs every morning for twenty years . It drove my mom crazy !\nSystem: You know what really drives me crazy ? When I ask for soft boiled eggs , and they overcook them , so they come out hard boiled ! How can you dipyour toast into a hard boiled egg ?\nUser: You ’ re so picky sometimes .\nSystem: Here you go , honey , fried eggs .\nUser: Dammit ! I asked for sunny side up ! How many times do I have to tell you .",
+        "translated_dialogue": "System: わあ、今日は早起きだね！朝食は何？\nUser: ええと、焼きたい気分だったから、マフィンを作ったわ。\nSystem: いい匂いだ！コーヒーを淹れるよ。卵も作ろうか？\nUser: ええ、私のはサニーサイドアップでお願い。\nSystem: うわあ、よくそんな風に卵を食べられるね！小さい頃からずっとエッグ・アンド・ソルジャーズだったよ。\nUser: 知ってる？私の父は20年間、毎朝スクランブルエッグだったの。母は気が狂いそうだったわ！\nSystem: 私が本当に頭にくること知ってる？半熟卵を頼んだのに、火を通しすぎて固ゆでになってしまうこと！固ゆでの卵にどうやってトーストを浸すんだ？\nUser: あなたは時々本当に口うるさいわね。\nSystem: さあ、どうぞ、ハニー、目玉焼きだよ。\nUser: ちくしょう！サニーサイドアップって言ったでしょ！何度言えばわかるの。",
+        "annotations": [
+            {
+                "entity": "sunny side up",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Morning"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "muffin",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Morning"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "baking",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Morning"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 9,
+        "original_index": 5385,
+        "original_dialogue": "System: How do you like the food here ?\nUser: I don't like it very much.But every-body likes their own food best .\nSystem: There are many things I miss . You can't get the ingredients here .\nUser: Are you sure ? All the big cities have specialty shops , which sell all sorts of ethnic foods .\nSystem: Perhaps . i just haven't had time to find them yet .",
+        "translated_dialogue": "System: ここの食べ物はどう？\nUser: あまり好きじゃないわ。でも、みんな自分の国の食べ物が一番好きよね。\nSystem: 恋しいものがたくさんあるよ。ここでは材料が手に入らないんだ。\nUser: 本当に？大きな街にはどこでも、あらゆる種類のエスニックフードを売っている専門店があるわよ。\nSystem: たぶんね。まだそれらを見つける時間がなかっただけだ。",
+        "annotations": [
+            {
+                "entity": "own food",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 10,
+        "original_index": 6412,
+        "original_dialogue": "System: Out of every movie that you've seen , which one is your favorite ?\nUser: I'm going to have to say that Superbad is the best movie ever .\nSystem: You think so , how come ?\nUser: Well , Superbad is super funny .\nSystem: You're not lying , I found that movie absolutely hilarious .\nUser: I didn't know that you saw Superbad before .\nSystem: I made sure to be in line to see it the first day it came out .\nUser: I couldn't keep from laughing throughout the whole movie .\nSystem: I was laughing hysterically the whole time ; my stomach muscles hurt afterwards .\nUser: That's exactly how I felt .\nSystem: I got the movie when it came out on DVD , do you want to come over ?\nUser: I would love to .",
+        "translated_dialogue": "System: 今まで観た全ての映画の中で、どれが一番好き？\nUser: 『スーパーバッド 史上最悪の合コン計画』が史上最高の映画だと断言するわ。\nSystem: そう思うの？どうして？\nUser: ええと、『スーパーバッド』は超面白いからよ。\nSystem: 嘘じゃないわね、私もあの映画は心底爆笑したわ。\nUser: あなたが以前『スーパーバッド』を観たなんて知らなかったわ。\nSystem: 公開初日に並んで観るようにしたわよ。\nUser: 映画の間ずっと笑いが止まらなかったわ。\nSystem: 私は終始ヒステリックに笑っていたわ。後で腹筋が痛くなったほどよ。\nUser: まさに私も同じ気持ちだったわ。\nSystem: DVDが出た時にその映画を買ったんだけど、見に来ない？\nUser: ぜひ行きたいわ。",
+        "annotations": [
+            {
+                "entity": "Superbad",
+                "axis": "liking",
+                "sub_axis": "stimulation",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Superbad",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 11,
+        "original_index": 10920,
+        "original_dialogue": "System: May I help you , sir ?\nUser: I'd like to buy a shirt .\nSystem: What color do you want ?\nUser: I prefer the blue one .\nSystem: What size are you ?\nUser: I'm not sure . Could you measure me , please ?\nSystem: No problem . I think 40 will be fine for you .\nUser: Can I try it on ?\nSystem: Of course . The fitting room is this way , please .",
+        "translated_dialogue": "System: 何かお手伝いしましょうか、お客様？\nUser: シャツを買いたいのですが。\nSystem: 何色がよろしいですか？\nUser: 青いのがいいです。\nSystem: サイズはいくつですか？\nUser: よくわかりません。採寸していただけますか？\nSystem: 問題ありません。40で大丈夫だと思います。\nUser: 試着してもいいですか？\nSystem: もちろんです。試着室はこちらです、どうぞ。",
+        "annotations": [
+            {
+                "entity": "blue shirt",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 12,
+        "original_index": 4300,
+        "original_dialogue": "System: Do you like Barry ?\nUser: No , not very much . He ’ s too ambitious and dishonest .\nSystem: I agree . I like his brother , Paul . They are not alike .\nUser: Yes . They are completely different . Paul is very sociable and much more honest than his brother .\nSystem: What kind of person do you consider yourself to be ?\nUser: I think I ’ m polite , careful , relaxed and shy .\nSystem: Oh , I don ’ t think you ’ re shy ! You are always chatting with new people when we go to a party .\nUser: Well , yes , but those people always start talking to me . I never talk to them first . Perhaps I ’ m not as shy as I think . Anyway , you ’ re certainly not shy !\nSystem: You ’ re right . I love going out and making new friends .\nUser: So , you ’ ll be at my birthday party on Friday ?\nSystem: Of course !",
+        "translated_dialogue": "System: バリーのことは好き？\nUser: いいえ、あまり好きじゃないわ。彼は野心がありすぎるし、不誠実よ。\nSystem: 同感だ。彼の弟のポールは好きだよ。彼らは似ていないね。\nUser: ええ。彼らは完全に違うわ。ポールはとても社交的で、彼の兄よりもずっと正直よ。\nSystem: あなたは自分のことをどんな人だと思いますか？\nUser: 私は、礼儀正しくて、慎重で、のんびりしていて、内気だと思うわ。\nSystem: あら、あなたが内気だとは思わないわ！パーティーに行くと、あなたはいつも新しい人と話しているじゃない！\nUser: ええと、そうね、でもいつも向こうから話しかけてくるのよ。私から話しかけることは決してないわ。たぶん、私が思っているほど内気ではないのかもしれない。とにかく、あなたは絶対に内気ではないわね！\nSystem: あなたの言う通りだわ。出かけて新しい友達を作るのが大好きよ。\nUser: じゃあ、金曜日の私の誕生日パーティーに来てくれる？\nSystem: もちろん！",
+        "annotations": [
+            {
+                "entity": "Barry",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "negative",
+                "intensity": "low",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Paul",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 13,
+        "original_index": 8135,
+        "original_dialogue": "System: Do you like this dress , madam ?\nUser: I like the colour very much . It's a lovely dress , but it's too small for me .\nSystem: What about this one ? It's a lovely dress . It's very smart . Short skirts are in fashion now . Would you like to try it ?\nUser: All right . I'm afraid this green dress is too small for me as well . It's smaller than the blue one . I don't like the colour either . It doesn't suit me at all . I think the blue dress is prettier . Co\nSystem: I'm afraid I haven't got a larger dress . This is the largest dress in the shop .",
+        "translated_dialogue": "System: マダム、このドレスはいかがですか？\nUser: 色はとても気に入りました。素敵なドレスですが、私には小さすぎます。\nSystem: こちらはいかがですか？これも素敵なドレスです。とても粋ですよ。今はミニスカートが流行っています。試着してみませんか？\nUser: わかりました。この緑のドレスも私には小さすぎるようです。青いものより小さいです。色も好きではありません。全く似合いません。青いドレスの方が可愛いと思います。ご\nSystem: 申し訳ございませんが、これ以上大きなドレスはございません。これがこの店で一番大きなドレスです。",
+        "annotations": [
+            {
+                "entity": "blue dress",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "green dress",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "negative",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 14,
+        "original_index": 578,
+        "original_dialogue": "System: What shall we do after the volleyball match ?\nUser: How about going to the Olympic souvenir store to have a look ? I remember there is one in the gym .\nSystem: That's a good idea . I was thinking of buying some gifts for my family .\nUser: Me , too . What did you have in mind ?\nSystem: I haven't decided yet , but I think the Olympic Mascots are a must .\nUser: I agree . They're very lovely , especially Huanhuan\nSystem: Is that the red one ? That is my favorite , too . Do you know how much they are ?\nUser: The five dolls are sold together as a set , and they're priced according to the size . The bigger they are the more expensive .\nSystem: Oh , I see . If I buy more than a set , can I get any discount ?\nUser: I don't think so . All the souvenirs of the Olympic Games are very hot right now .\nSystem: Any other ideas ?\nUser: There are lots of things , such as postcards , key chains , posters and various arts and crafts .\nSystem: It all sounds great . We can go there after the match . I can't wait to see what they have .",
+        "translated_dialogue": "System: バレーボールの試合の後、何をしましょうか？\nUser: オリンピックのお土産屋に行ってみるのはどうでしょう？体育館の中にあったと思います。\nUser: いいアイデアね。私も家族にいくつかお土産を買おうと思っていたの。\nSystem: 私もよ。何か考えているものはある？\nUser: まだ決めていませんが、オリンピックのマスコットは必須だと思います。\nSystem: 同感だわ。とても可愛らしいわよね、特に歓歓（ファンファン）は。\nUser: 赤いのですか？あれは私もお気に入りです。値段はいくらかご存知ですか？\nUser: 5体の人形がセットで売られていて、サイズによって値段が異なります。大きいほど高くなります。\nSystem: なるほど。複数セット買えば、割引はありますか？\nUser: ないと思います。オリンピックの記念品は今、とても人気ですから。\nSystem: 他に何かアイデアはありますか？\nUser: ポストカード、キーホルダー、ポスター、様々な工芸品など、たくさんのものがありますよ。\nSystem: どれも良さそうですね。試合の後に行きましょう。どんなものがあるか見るのが待ちきれません。",
+        "annotations": [
+            {
+                "entity": "Olympic souvenir store",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Olympic Mascots",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "gift",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Shop"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Huanhuan",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 15,
+        "original_index": 6946,
+        "original_dialogue": "System: Good evening , ma'am . Table for one ?\nUser: Yes , please .\nSystem: Will this table be all right ?\nUser: Actually , I'd like a booth by the window if that's possible .\nSystem: Certainly . How about this one ?\nUser: This will be fine , thanks .\nSystem: ( Handing her a menu ) Your waiter will be here in a minute to take your order .\nUser: Thank you .",
+        "translated_dialogue": "System: こんばんは、奥様。お一人様ですか？\nUser: はい、お願いします。\nSystem: こちらのテーブルでよろしいでしょうか？\nUser: 実は、もし可能でしたら窓際のボックス席がいいのですが。\nSystem: かしこまりました。こちらはいかがでしょうか？\nUser: こちらで結構です、ありがとう。\nSystem: （メニューを渡しながら）ご注文を伺いに、すぐに係の者が参ります。\nUser: ありがとう。",
+        "annotations": [
+            {
+                "entity": "booth by th window",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Solo",
+                    "Afternoon"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 16,
+        "original_index": 5919,
+        "original_dialogue": "System: Lucy , where are you going ?\nUser: I want to go to the supermarket .\nSystem: Wait a few minutes and I'll go there with you .\nUser: Let's get a shopping cart .\nSystem: Good idea\nUser: What are you going to buy ?\nSystem: Let's check out the fruit section first .\nUser: OK . I'd like some oranges . But they don't look quite ripe yet .\nSystem: Look , nice fresh cherries ! They are ripe and soft . I'll take some .\nUser: I'll take some , too .\nSystem: Let's go to the snacks section . I want some chocolate and sweets .\nUser: OK . I'll go and buy some cakes .\nSystem: Do you want to buy something else ?\nUser: No . Let's go over to the check-out stand .",
+        "translated_dialogue": "System: ルーシー、どこへ行くの？\nUser: スーパーに行きたいの。\nSystem: 数分待って、一緒に行くよ。\nUser: ショッピングカートを取りましょう。\nSystem: いい考えだ\nUser: 何を買う予定？\nSystem: まずはフルーツ売り場を見てみよう。\nUser: わかった。オレンジが欲しいな。でもまだ全然熟れてなさそうね。\nSystem: 見て、新鮮なサクランボよ！熟していて柔らかい。いくつか買うわ。\nUser: 私もいくつか買うわ。\nSystem: スナック菓子売り場に行きましょう。チョコレートとお菓子が欲しいの。\nUser: わかった。私はケーキを買いに行くわ。\nSystem: 他に何か買いたいものはある？\nUser: ないわ。レジに行きましょう。",
+        "annotations": [
+            {
+                "entity": "supermarket",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "orange",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Shop",
+                    "Shopping"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "nice fresh and ripe and soft cherries",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Shop",
+                    "Shopping"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 17,
+        "original_index": 5411,
+        "original_dialogue": "User: How nice these sunglasses are !\nUser: Yes , they are the latest designs . Would you like to try them on ?\nUser: I want to try on this pair .\nUser: The round shape pair ?\nUser: That's right .\nUser: I think it suits you well .\nUser: I agree , how much ?\nUser: 120 yuan .\nUser: It's not expensive . OK . I'll take them .",
+        "translated_dialogue": "User: このサングラス、なんて素敵なんだ！\nUser: ええ、最新のデザインです。試着してみませんか？\nUser: このペアを試着したいです。\nUser: 丸い形のペアですか？\nUser: その通りです。\nUser: とてもお似合いだと思います。\nUser: 同感です、おいくらですか？\nUser: 120元です。\nUser: 高くありませんね。よし。これをいただきます。",
+        "annotations": [
+            {
+                "entity": "latest design sunglasses",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "latest design and round shape sunglass",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 18,
+        "original_index": 603,
+        "original_dialogue": "System: Look ! It ’ s the start of the Olympic Games .\nUser: So what ?\nSystem: You want to watch , don ’ t you ?\nUser: Not really . I couldn ’ t careless about the Olympic Games .\nSystem: Please yourself .",
+        "translated_dialogue": "System: 見て！オリンピックの始まりよ。\nUser: だから何？\nSystem: 見たいんでしょう？\nUser: 別に。オリンピックなんてどうでもいいわ。\nSystem: 勝手にしなさい。",
+        "annotations": [
+            {
+                "entity": "Olympic Games",
+                "axis": "wanting",
+                "sub_axis": "interest",
+                "polarity": "neutral",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 19,
+        "original_index": 1938,
+        "original_dialogue": "System: Diana , do you like the perfume I gave you ?\nUser: It ’ s good . But to tell you the truth , I don ’ t wear perfume .\nSystem: I ’ m sorry . I didn ’ t know that .\nUser: That ’ s all right . Thank you all the same .",
+        "translated_dialogue": "System: ダイアナ、私がプレゼントした香水、気に入った？\nUser: 良いわよ。でも正直に言うと、私、香水はつけないの。\nSystem: ごめんなさい。知らなかったわ。\nUser: 大丈夫よ。それでもありがとう。",
+        "annotations": [
+            {
+                "entity": "pefume",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 20,
+        "original_index": 1959,
+        "original_dialogue": "System: What kind of books do you like ?\nUser: I like reading novels about early America .\nSystem: Really ? Me too .\nUser: Which one do you like best ?\nSystem: I prefer the novels by Hemingway , such as The Old Man and the Sea . I like the simple words in his novels .\nUser: Yup . Though the words he used are simple , but the spirit he has conveyed is great .\nSystem: Absolutely !",
+        "translated_dialogue": "System: どんな種類の本が好き？\nUser: 私は初期アメリカについての小説を読むのが好きよ。\nSystem: 本当？私もよ。\nUser: どれが一番好き？\nSystem: 私はヘミングウェイの小説、例えば『老人と海』が好きだわ。彼の小説のシンプルな言葉遣いが好きなの。\nUser: ええ。彼が使う言葉はシンプルだけど、彼が伝えている精神は素晴らしいわ。\nSystem: 全くその通りだわ！",
+        "annotations": [
+            {
+                "entity": "novels about early America",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "sprit Hemingway convey",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 21,
+        "original_index": 7344,
+        "original_dialogue": "System: How have you been doing ?\nUser: I can ’ t sleep or eat . I have a really bad pain in my tooth !\nSystem: How long have you had this toothache ?\nUser: It bothers me off and on , but it ’ s gotten much worse these past few weeks .\nSystem: Is there anything that you ’ Ve done to your tooth that might have caused the pain ?\nUser: My girlfriend told me that I grind my teeth a lot when I sleep . Maybe that is the problem .\nSystem: When you brush your teeth , what do you use ?\nUser: I use a soft bristle toothbrush .\nSystem: Does it bother you when you have to chew a lot ?\nUser: Absolutely . That set it off big time !",
+        "translated_dialogue": "System: 調子はどうですか？\nUser: 眠れないし、食べられません。歯が本当にひどく痛むんです！\nSystem: この歯痛はどれくらい前からですか？\nUser: 時々痛むのですが、ここ数週間でずっとひどくなりました。\nSystem: 歯に何かして、それが痛みの原因になったかもしれないことはありますか？\nUser: ガールフレンドが、寝ている間によく歯ぎしりをしていると言っていました。たぶんそれが問題かもしれません。\nSystem: 歯を磨くとき、何を使っていますか？\nUser: 柔らかい毛の歯ブラシを使っています。\nSystem: たくさん噛まなければならないときに、痛みはありますか？\nUser: まさに。それで一気に痛み出すんです！",
+        "annotations": []
+    },
+    {
+        "dialogue_id": 22,
+        "original_index": 9815,
+        "original_dialogue": "System: Gosh ! The water faucet is dripping badly again .\nUser: You are going to have a huge bill .\nSystem: I know . I ’ Ve got to get it fixed ASAP .\nUser: Don't you wanna get it fixed now ?\nSystem: I wish I could , but I ’ Ve got to go now . I have an appointment in 20 minutes .\nUser: Well , if you need anything , just let me know .\nSystem: Oh , by the way , could you give me a ride ? My car is still in the garage .\nUser: You sure have bad luck these days .",
+        "translated_dialogue": "System: ああ、もう！また水道の蛇口がひどくポタポタ漏れてる。\nUser: すごい請求書が来ることになるわよ。\nSystem: わかってる。一刻も早く修理してもらわないと。\nUser: 今すぐ直してもらいたくないの？\nSystem: できればそうしたいけど、もう行かなきゃ。20分後に約束があるんだ。\nUser: まあ、何か必要なことがあれば、知らせてちょうだい。\nSystem: ああ、そういえば、車で送ってくれない？僕の車はまだ修理工場なんだ。\nUser: 本当に最近運が悪いのね。",
+        "annotations": []
+    },
+    {
+        "dialogue_id": 23,
+        "original_index": 9594,
+        "original_dialogue": "User: Waiter , please bring me some toast .\nSystem: Sure . What kind of toast do you like ?\nUser: Pardon ?\nSystem: We have white toast , whole wheat toast and rye toast .\nUser: I see , bring me the whole wheat toast .\nSystem: Anything to drink ?\nUser: Milk , please .",
+        "translated_dialogue": "User: ウエイター、トーストを持ってきてください。\nSystem: かしこまりました。どのようなトーストがよろしいですか？\nUser: え？\nSystem: ホワイトトースト、全粒粉トースト、ライ麦トーストがございます。\nUser: なるほど、全粒粉トーストを持ってきてください。\nSystem: お飲み物はいかがですか？\nUser: ミルクをお願いします。",
+        "annotations": [
+            {
+                "entity": "whole wheat toast",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "milk",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "toast",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 24,
+        "original_index": 6159,
+        "original_dialogue": "User: I'll try one of these on . ( The customer tries one of the shoes on . ) It's too big . It slides up and down my heel when I walk around .\nSystem: Well , let's try a size ten . ( He gets another pair and the customer tries a shoe on ) Looks like a perfect fit .\nUser: Not really . It pinches my toes .\nSystem: I'm sure they'll be fine once you break them in .\nUser: I don't know ... well , I guess I'll take them , since you don't seem to have anything better .\nSystem: Thank you , ma'am . It's been a pleasure doing business with you .",
+        "translated_dialogue": "User: これらを試着してみます。（客が靴を片方試着する。）大きすぎます。歩くと踵が上下に動きます。\nSystem: では、サイズ10を試してみましょう。（彼が別のペアを持ってきて、客が靴を試着する）ぴったり合っているようです。\nUser: そうでもありません。つま先がきついんです。\nSystem: 履き慣らせばきっと大丈夫ですよ。\nUser: どうでしょう…まあ、他に良さそうなものもないようですから、これにします。\nSystem: ありがとうございます、奥様。お取引できて光栄でした。",
+        "annotations": [
+            {
+                "entity": "big shoes",
+                "axis": "need",
+                "sub_axis": "functional",
+                "polarity": "negative",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 25,
+        "original_index": 6857,
+        "original_dialogue": "System: Let's go to Burger Queen for lunch . They have good cheese burgers .\nUser: OK . I am hungry , too . I like their milkshake . They're very creamy and tasty .\nSystem: Look at the long line , there are always a lot of people waiting in lines just for the cheese burger . It must be very delicious .\nUser: Yup . But , this also means we have to wait to order our food .\nSystem: Come on . It is worth waiting . Their cheese burgers are really popular . Once you have it , you will love it .\nUser: Well , sounds very attractive . I just tried their vanilla milkshake last time , and it was really delicious .\nSystem: Yup , they have good French fries as well . Not very thick , but crispy enough . You should try them with some mayonnaise sauce . That is the Belgium style . You will love it .\nUser: OK , I think I know what to order for my lunch now . But , eating too much fried food really makes me fat .\nSystem: Come on . You just have it once in a while , not every day . It will not harm you .\nUser: That's true . You can hear my tummy grumbling . I am really hungry !\nSystem: Be patient . Good food never comes fast .\nUser: Ok !",
+        "translated_dialogue": "System: お昼ごはんにバーガー・クイーンに行こう。あそこは美味しいチーズバーガーがあるよ。\nUser: OK。私もお腹が空いたわ。彼らのミルクシェイクが好きなの。とてもクリーミーで美味しいのよ。\nSystem: 長蛇の列を見て、チーズバーガーのためだけにいつもたくさんの人が並んでいるわ。とても美味しいに違いないね。\nUser: うん。でも、これは注文するのに待たなければならないということでもあるね。\nSystem: 大丈夫だよ。待つ価値はあるさ。彼らのチーズバーガーは本当に人気なんだ。一度食べたら、きっと好きになるよ。\nUser: ふむ、とても魅力的ね。前回バニラミルクシェイクだけ試したけど、本当に美味しかったわ。\nSystem: うん、フライドポテトも美味しいよ。あまり太くないけど、十分にクリスピーだ。マヨネーズソースと一緒に試してみるべきだよ。あれはベルギースタイルだ。気に入るよ。\nUser: OK、お昼に何を注文するか分かった気がするわ。でも、揚げ物を食べ過ぎると本当に太るのよね。\nSystem: 大丈夫だよ。たまに食べるだけで、毎日じゃないだろ。害はないよ。\nUser: それはそうね。お腹がグーグー鳴っているのが聞こえるわ。本当にお腹が空いた！\nSystem: 我慢して。美味しい食べ物はすぐには来ないよ。\nUser: わかった！",
+        "annotations": [
+            {
+                "entity": "Burger Queen",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Noon",
+                    "Hungry"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "vanilla milkshake",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Restaurant"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 26,
+        "original_index": 1984,
+        "original_dialogue": "System: Excuse me . Is there any body here ?\nUser: Yes .\nSystem: I've finished up all my water . I would kill for a sip of water .\nUser: Sure , come on in .\nSystem: Thank you very much . Are you here alone ?\nUser: My father and sister are out to photographing . What about you ?\nSystem: I'm a back-packer from America .\nUser: What is a back-packer ?\nSystem: It means a hiker who loves traveling around the world .\nUser: Cool . You must have been to a lot of places .\nSystem: Yes , actually almost half of all the countries over the world . I love traveling places .\nUser: So cool . I want to be a back-packer when I grow up .\nSystem: You can do it . But do work hard on your English to make it easier .\nUser: I'll try my best .",
+        "translated_dialogue": "System: すみません。どなたかいらっしゃいますか？\nUser: はい。\nSystem: 水を全部飲み干してしまいました。一口でも水が飲めたら死ぬほど嬉しいのですが。\nUser: もちろん、どうぞ中へ。\nSystem: どうもありがとうございます。お一人ですか？\nUser: 父と妹は写真撮影に出かけています。あなたは？\nSystem: 私はアメリカから来たバックパッカーです。\nUser: バックパッカーとは何ですか？\nSystem: 世界中を旅するのが好きなハイカーのことです。\nUser: かっこいい。たくさんの場所に行ったに違いありませんね。\nSystem: ええ、実際、世界のほぼ半分の国に行きました。旅をするのが大好きなんです。\nUser: すごくかっこいいです。大人になったらバックパッカーになりたいです。\nSystem: なれますよ。でも、もっと簡単にするために英語を一生懸命勉強してくださいね。\nUser: ベストを尽くします。",
+        "annotations": [
+            {
+                "entity": "back-packer",
+                "axis": "liking",
+                "sub_axis": "identification",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "back-packer",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 27,
+        "original_index": 9871,
+        "original_dialogue": "System: I really think all Americans look alike .\nUser: You ’ re crazy ! You haven ’ t been here long enough .\nSystem: But they do .\nUser: What makes you say that ?\nSystem: They wear the same clothes , they ’ re all blond , they all drive cars , they all own Parker fountain pens ; they all drink Coca Cola , and they all chew gum .\nUser: I disagree with you . They don ’ t all wear the same clothes ; they ’ re definitely not all blond ; they don ’ t all own Parker fountain pens ; they don ’ t all drink Coca Cola , and they don ’ t all chew gum . I do think they all drive cars though ! But that doesn ’ t have anything to do with how they look !\nSystem: Maybe I am just homesick . I know you ’ re right . I just miss China , that ’ s all .",
+        "translated_dialogue": "System: 本当にアメリカ人はみんな同じように見えると思う。\nUser: おかしいわよ！あなたはまだここに長くいないわ。\nSystem: でも、そう見えるんだ。\nUser: なぜそう言うの？\nSystem: みんな同じ服を着ていて、みんなブロンドで、みんな車を運転していて、みんなパーカーの万年筆を持っていて、みんなコカ・コーラを飲んでいて、みんなガムを噛んでいるんだ。\nUser: 私はあなたに反対よ。みんなが同じ服を着ているわけではないわ。絶対にみんながブロンドではないし。みんながパーカーの万年筆を持っているわけでもないし。みんながコカ・コーラを飲むわけでもないし、みんながガムを噛むわけでもないわ。でも、みんなが車を運転しているのは確かだと思う！でも、それは彼らの見た目とは何の関係もないわ！\nSystem: たぶん、ただホームシックなんだろう。あなたの言う通りだとわかってる。ただ中国が恋しいだけなんだ。",
+        "annotations": []
+    },
+    {
+        "dialogue_id": 28,
+        "original_index": 5478,
+        "original_dialogue": "System: I want to check in now . Here is my ticket .\nUser: Don't you have any luggage to check in ?\nSystem: No , sir .\nUser: Do you have a seat preference ?\nSystem: I'd like an aisle seat . I feel terrible near the window .\nUser: Here is your boarding pass . Have a nice day .",
+        "translated_dialogue": "System: 今すぐチェックインしたいのですが。こちらが私のチケットです。\nUser: 預ける荷物はございませんか？\nSystem: いいえ、ありません。\nUser: 座席の希望はございますか？\nSystem: 通路側の席をお願いします。窓際だと気分が悪くなるんです。\nUser: こちらが搭乗券です。良い一日を。",
+        "annotations": [
+            {
+                "entity": "aisle seat",
+                "axis": "need",
+                "sub_axis": "personal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "window seat",
+                "axis": "need",
+                "sub_axis": "personal",
+                "polarity": "negative",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 29,
+        "original_index": 3897,
+        "original_dialogue": "System: Hey , May . How about getting together for a movie tonight ?\nUser: Sure . What's playing ?\nSystem: Well , Let me check the newspaper . What about The Terminal ?\nUser: Wow , it stars Catherine Zeta-Jones , my favorite actress .\nSystem: Well , birds of a feather flock together . I like her too . She was in a lot of dramas .\nUser: She is so beautiful and elegant . And she is famous for her fine acting .\nSystem: What's more , she doesn't have scandals . And she likes to take part in the charitable activities .\nUser: Who is the director ?\nSystem: Steven Spielberg . Another superstar .\nUser: Yes , a legend , also . I still remember , his movies , Jurassic Park and Schindler's List got him nine Oscar awards in 1994 .\nSystem: Can you introduce the story of The Terminal briefly ?\nUser: It tells a romantic and humorous love story .\nSystem: This is really exciting movie . Lets go to this one .",
+        "translated_dialogue": "System: ねえ、メイ。今夜一緒に映画を見に行くのはどう？\nUser: いいわ。何を上映しているの？\nSystem: ええと、新聞をチェックさせて。『ターミナル』はどう？\nUser: わあ、私の大好きな女優、キャサリン・ゼタ＝ジョーンズが出演しているわ。\nSystem: まあ、類は友を呼ぶね。僕も彼女が好きだよ。たくさんのドラマに出ていたね。\nUser: 彼女はとても美しくてエレガントね。そして、素晴らしい演技で有名だわ。\nSystem: さらに、スキャンダルがないんだ。それに、慈善活動に参加するのが好きなんだ。\nUser: 監督は誰？\nSystem: スティーブン・スピルバーグだ。もう一人のスーパースターだね。\nUser: ええ、彼もまた伝説ね。彼の映画、『ジュラシック・パーク』と『シンドラーのリスト』で、1994年に9つのオスカー賞を獲得したのを覚えているわ。\nSystem: 『ターミナル』の物語を簡単に紹介してくれる？\nUser: ロマンチックでユーモラスなラブストーリーを語っているよ。\nSystem: これは本当にわくわくする映画だね。これを見に行こう。",
+        "annotations": [
+            {
+                "entity": "movie",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "group"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Catherine Zeta-Jones",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Catherine Zeta-Jones",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 30,
+        "original_index": 3709,
+        "original_dialogue": "System: Thanks for the pizza . It was delicious .\nUser: It's okay .\nSystem: Next time , it's on me .\nUser: Don't be silly .\nSystem: I'm serious .\nUser: Alright . Next time , we can try some other flavors .\nSystem: Certainly . The vegetarian pizza looks pretty good . It must be very delicious .\nUser: Definitely . I really like Italian food .",
+        "translated_dialogue": "System: ピザありがとう。美味しかったよ。\nUser: 大丈夫だよ。\nSystem: 次回は僕が奢るよ。\nUser: バカ言わないで。\nSystem: 本気だよ。\nUser: わかった。次は他の味を試してみようか。\nSystem: もちろん。ベジタリアンピザがとても美味しそうだ。きっとすごく美味しいに違いない。\nUser: 間違いないね。イタリア料理が本当に好きなんだ。",
+        "annotations": [
+            {
+                "entity": "vegetarian pizza",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Italian food",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 31,
+        "original_index": 1494,
+        "original_dialogue": "System: Are you doing anything tonight ?\nUser: No , nothing . Why ?\nSystem: Do you like western music ?\nUser: Yes , I do , very much .\nSystem: There ’ s a concert tonight . Would you like to go and listen to it ?\nUser: Oh , yes . I ’ d love to .",
+        "translated_dialogue": "System: 今夜何か予定ある？\nUser: いいえ、何も。どうして？\nSystem: 西洋音楽は好き？\nUser: ええ、とても好きよ。\nSystem: 今夜コンサートがあるんだ。一緒に行って聴かない？\nUser: ああ、ええ。ぜひ行きたいわ。",
+        "annotations": [
+            {
+                "entity": "western music",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "western music concert",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "Night",
+                    "group"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 32,
+        "original_index": 5211,
+        "original_dialogue": "System: May I take your order ?\nUser: What's the specialty of the house ?\nSystem: The baked fish in tomato sauce is pretty good .\nUser: I like fish . Please bring me an order of that .\nSystem: Do you want some dessert ?\nUser: Apple pie , please .\nSystem: Single or double ?\nUser: Make it two .",
+        "translated_dialogue": "System: ご注文をお伺いしてもよろしいでしょうか？\nUser: こちらのお店の名物は何ですか？\nSystem: 焼き魚のトマトソース添えはかなり美味しいですよ。\nUser: 魚が好きです。それを一皿お願いします。\nSystem: デザートはいかがですか？\nUser: アップルパイをお願いします。\nSystem: シングルですか、ダブルですか？\nUser: 二つにしてください。",
+        "annotations": [
+            {
+                "entity": "fish",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "apple pie",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "The baked fish in tomato sauce",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 33,
+        "original_index": 5732,
+        "original_dialogue": "System: Don't you think it's nice out ?\nUser: Yes , I think so too .\nSystem: I think that it's going to rain .\nUser: I hope that it does rain .\nSystem: You like the rain ?\nUser: The sky looks so clean after it rains . I love it .\nSystem: I understand . Rain does make it smell cleaner .\nUser: I love most how it is at night after it rains .\nSystem: How come ?\nUser: You can see the stars so much more clearly after it rains .\nSystem: I would love for it to rain today .\nUser: I would too .",
+        "translated_dialogue": "System: 外はいい天気だと思わない？\nUser: ええ、私もそう思うわ。\nSystem: 雨が降りそうだね。\nUser: 雨が降るといいな。\nSystem: 雨が好きなの？\nUser: 雨が降った後の空がとてもきれいなのよ。大好きだわ。\nSystem: わかるよ。雨が降ると空気もきれいになる匂いがするね。\nUser: 一番好きなのは、雨が降った後の夜の様子なの。\nSystem: どうして？\nUser: 雨が降った後だと、星がずっとはっきり見えるからよ。\nSystem: 今日雨が降ってくれたらいいのに。\nUser: 私もよ。",
+        "annotations": [
+            {
+                "entity": "rain",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "sky after it rains",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "clear stars after it rains",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "Night"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 34,
+        "original_index": 5327,
+        "original_dialogue": "System: What can I do for you ?\nUser: I wish to buy a diamond ring .\nSystem: How many carats diamond do you want ?\nUser: Two carats .\nSystem: Is this one suit for you ?\nUser: No , it seems too old-fashioned .\nSystem: What about this ?\nUser: Let me try it on , it's too small for me , haven't you got any larger ones ?\nSystem: Yes , try this one please .\nUser: This fits me well , how much is it ?\nSystem: 3,500 yuan .\nUser: It's reasonable . Here you are .",
+        "translated_dialogue": "System: 何かお手伝いできることはありますか？\nUser: ダイヤモンドの指輪を買いたいのですが。\nSystem: 何カラットのダイヤモンドをご希望ですか？\nUser: 2カラットです。\nSystem: こちらはいかがでしょうか？\nUser: いいえ、古風すぎます。\nSystem: こちらはどうでしょう？\nUser: 試着させてください、私には小さすぎます、もっと大きいものはありませんか？\nSystem: はい、こちらをお試しください。\nUser: これはぴったりです、おいくらですか？\nSystem: 3,500元です。\nUser: 妥当ですね。どうぞ。",
+        "annotations": [
+            {
+                "entity": "two carats diamond ring",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 35,
+        "original_index": 3121,
+        "original_dialogue": "System: What do you plan to do on Sunday morning ?\nUser: Nothing special .\nSystem: How about going to English corner with me ?\nUser: Oh , I'd rather not .\nSystem: Why not ?\nUser: You know , I am poor at English , especially spoken English .\nSystem: That's why you should go there , If you don't dare to speak English owing to the fact that you are afraid of making mistakes , you simply will never learn English .",
+        "translated_dialogue": "System: 日曜日の午前中に何をする予定？\nUser: 特にないわ。\nSystem: 私と一緒にイングリッシュ・コーナーに行くのはどう？\nUser: ああ、遠慮したいわ。\nSystem: なぜ？\nUser: 知っての通り、私は英語が苦手なの、特に英会話が。\nSystem: だからこそそこに行くべきなのよ。間違いを恐れるあまり英語を話す勇気を持たないなら、あなたは決して英語を習得できないわ。",
+        "annotations": [
+            {
+                "entity": "English corner",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "negative",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 36,
+        "original_index": 2264,
+        "original_dialogue": "System: Robin , what are you going to do tomorrow ?\nUser: Bob and I plan to play hockey in the morning .\nSystem: And later ?\nUser: Well , in the afternoon , after a long nap , we ’ ll go yachting with Nora .\nSystem: It seems that you will have a nice day tomorrow .\nUser: How about you ? What are you going to do tomorrow ?\nSystem: I have a lot of work in the office and a lot of chores in the house.How I envy you , Robin !",
+        "translated_dialogue": "System: ロビン、明日何する？\nUser: ボブと僕は午前中にホッケーをする予定だ。\nSystem: 午後は？\nUser: ええと、午後は長い昼寝をした後、ノラとヨットに行くんだ。\nSystem: 明日、楽しい一日になりそうね。\nUser: 君は？明日は何をするつもり？\nSystem: 事務所で仕事がたくさんあるし、家でもやることが山積みよ。ロビン、本当に羨ましいわ！",
+        "annotations": [
+            {
+                "entity": "hockey",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Morning",
+                    "group"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "yachting",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "group",
+                    "Afternoon"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 37,
+        "original_index": 1429,
+        "original_dialogue": "User: Now that it ’ s the new year , I ’ Ve decided to turn over a new leaf .\nSystem: Yeah ? You finally decided to wipe the slate clean ?\nUser: You got it ! I have a new job , I ’ m living in a new city , with new friends ! This is my opportunity to make some small changes in the way I live my life .\nSystem: So what are you going to do ? Take up an art class or something ?\nUser: Well , first of all , I ’ Ve decided to stop smoking . It ’ s not that I ’ m pinching pennies or anything , it ’ s just that I ’ Ve been smoking since I was sixteen , and I think it ’ s time to stop .\nSystem: I ’ m with you on that one . Anything else you ’ re planning on doing ?\nUser: One last thing , I ’ Ve decided to come out of the closet .\nSystem: It ’ s about time !",
+        "translated_dialogue": "User: 新年を迎えたので、心機一転決心したんだ。\nSystem: そう？ついに一からやり直すことにしたのか？\nUser: その通り！新しい仕事に就いて、新しい街で、新しい友達と暮らしてるんだ！これは生活スタイルを少しずつ変えるチャンスなんだ。\nSystem: じゃあ何をするつもり？アート教室とか通うの？\nUser: まず第一に、禁煙を決めたんだ。金に困ってるわけじゃないけど、16歳から吸い続けてきたし、そろそろやめる時だと思うんだ。\nSystem: それは賛成だ。他に何か計画してることある？\nUser: 最後に一つ、カミングアウトすることを決めたんだ。\nSystem: やっとかよ！",
+        "annotations": [
+            {
+                "entity": "smoking",
+                "axis": "need",
+                "sub_axis": "personal",
+                "polarity": "negative",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "coming out of the closet",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 38,
+        "original_index": 1338,
+        "original_dialogue": "System: You talked like the Terminator for two months ? Wow , I think you liked that movie even more than I liked ' Titanic . ' Why did you like ' Terminator ' so much ?\nUser: Well , ' Terminator ' is a really great action movie , and I like action movies because they're exciting .\nSystem: Isn't ' Terminator ' really violent ? I usually don't like gory movies because they gross me out .\nUser: It is pretty violent , but since it's just robots fighting one another , it isn't very bloody and so it won't gross you out .\nSystem: Hmm ... I don't know . Even though it may not be gory , I think it would still totally freak me out .",
+        "translated_dialogue": "System: 2ヶ月もターミネーターみたいな話し方してたの？ わあ、君は『タイタニック』を好きな僕以上にあの映画が好きだったんだね。なんでそんなに『ターミネーター』が好きなんだ？\nUser: だって『ターミネーター』は本当に素晴らしいアクション映画だし、僕はアクション映画が好きなんだ。だってワクワクするからね。\nSystem: 『ターミネーター』ってすごく暴力的な映画じゃない？血みどろの映画は気持ち悪くて普段は見ないんだけど。\nUser: 確かに暴力的なけど、ロボット同士の戦いだから血まみれじゃないし、君が気持ち悪く感じることはないよ。\nSystem: うーん…どうかな。血まみれじゃなくても、やっぱり完全に怖がっちゃうと思う。",
+        "annotations": [
+            {
+                "entity": "Terminator",
+                "axis": "liking",
+                "sub_axis": "stimulation",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "action movie",
+                "axis": "liking",
+                "sub_axis": "stimulation",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 39,
+        "original_index": 9146,
+        "original_dialogue": "User: I think this painting would look good in our living room . What do you think ?\nSystem: Sure . Let's buy it .",
+        "translated_dialogue": "User: この絵、リビングに飾ったら素敵だと思うんだけど、どうかな？\nSystem: うん、買おうよ。",
+        "annotations": [
+            {
+                "entity": "painting",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Home"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 40,
+        "original_index": 3390,
+        "original_dialogue": "System: Time flies !\nUser: You're telling me .",
+        "translated_dialogue": "System: 時が経つのは早いね！\nUser: 本当にそうだね。",
+        "annotations": []
+    },
+    {
+        "dialogue_id": 41,
+        "original_index": 6673,
+        "original_dialogue": "System: Have you made up your mind about not going back to your hometown after graduation ? Where else would you go ?\nUser: I would try to land a job in Beijing . I just want to go to one of the big cities .\nSystem: why ?\nUser: many say more development opportunities can be found there .\nSystem: that's true . Beijing is the political , economic and cultural center of the entire country .\nUser: and there're higher salaries there .\nSystem: well , that's true , but living expenses are also higher in big cities .\nUser: I've considered that . I'll share an apartment with others to save the rent , and the cost of living won't be too much for only one person .\nSystem: one person ? How about your girlfriend ?\nUser: oh , we had to break up because she didn't want to float around in Beijing . She insisted on working in her hometown and having a stable life .\nSystem: sorry to hear that . It seems you have sacrificed a lot to work away from home .\nUser: sure have . I want to offer my parents a better life ; so , I'll have to work very hard .\nSystem: I admire you . Good luck !",
+        "translated_dialogue": "System: 卒業後は故郷に帰らないって決めたの？じゃあどこに行くつもり？\nUser: 北京で仕事を探そうと思う。とにかく大都市に行きたいんだ。\nSystem: どうして？\nUser: 発展の機会が多いってみんな言うからね。\nSystem: 確かにね。北京は全国的な政治・経済・文化の中心地だし。\nUser: それに給料も高いしね。\nSystem: まあ、それはそうだけど、大都市は生活費も高いよ。\nUser: それは考えたよ。家賃を節約するためにルームシェアするつもりだし、一人暮らしなら生活費もそれほどかからないはず。\nSystem: 一人？彼女はどうしたの？\nUser: ああ、別れたんだ。彼女が北京で浮き沈みする生活は嫌だって。故郷で働いて安定した生活を送りたいって主張したんだ。\nSystem: それは残念だね。故郷を離れて働くために、君は多くのものを犠牲にしているようだな。\nUser: 確かにそうだ。両親にもっと良い生活を提供したい。だから、一生懸命働かなきゃいけないんだ。\nSystem: 尊敬するよ。頑張ってね！",
+        "annotations": [
+            {
+                "entity": "job",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "big city",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Beijing",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "offering parents a better life",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "working very hard",
+                "axis": "need",
+                "sub_axis": "personal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "saving rent",
+                "axis": "need",
+                "sub_axis": "functional",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 42,
+        "original_index": 953,
+        "original_dialogue": "User: The weather is terrible .\nSystem: Yes . It was sunny and warm yesterday but the wind is really blowing hard now .\nUser: I'm wearing my heavy jacket .\nSystem: I'm going to put on more clothes , too .\nUser: Will it snow today ?\nSystem: I don't know . Do you like snowing ?\nUser: Yes , when it snows , every where is white . It's very beautiful .\nSystem: You can read the newspaper . Maybe it will tell you whether it will snow or not .\nUser: Good idea .",
+        "translated_dialogue": "User: 天気がひどいな。\nSystem: そうだね。昨日は晴れて暖かかったのに、今は風がすごく強いよ。\nUser: 厚手のジャケットを着てるんだ。\nSystem: 僕ももっと着込むつもりだ。\nUser: 今日は雪降るかな？\nSystem: わからない。雪は好き？\nUser: うん、雪が降ると、どこも真っ白になるんだ。すごくきれいだよ。\nSystem: 新聞を読めばいいよ。降るかどうか書いてあるかもしれない。\nUser: いい考えだ。",
+        "annotations": [
+            {
+                "entity": "snow",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 43,
+        "original_index": 5284,
+        "original_dialogue": "System: It ’ s time to get up .\nUser: I just went to bed .\nSystem: You shouldn ’ t stay up so late watching TV . I told you we had to get an early start .\nUser: I know , but that movie was just too good to leave . I guess I ’ ll just have to pay the price anti-sleepy .\nSystem: Do you want to eat breakfast here ?\nUser: No . why don ’ t we describe and buy at the coffee shop next door ?\nSystem: Ok by me .",
+        "translated_dialogue": "System: そろそろ起きる時間だよ。\nUser: 寝たばかりなのに。\nSystem: テレビ見て夜更かししちゃダメだよ。早く起きなきゃって言ったでしょ。\nUser: わかってるけど、あの映画が面白すぎてやめられなかったんだ。眠気との戦いを覚悟するしかないね。\nSystem: 朝食はここで食べる？\nUser: いや、隣のカフェで買って食べない？\nSystem: いいよ。",
+        "annotations": [
+            {
+                "entity": "movie",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "Night"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "coffee shop",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Morning",
+                    "group"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 44,
+        "original_index": 4836,
+        "original_dialogue": "System: What is your major ?\nUser: My major is Business Administration , I am especially interested in Marketing .\nSystem: Which university are you attending ?\nUser: I attended Suzhou University .\nSystem: Have you received any degrees ?\nUser: Yes . I received my Bachelor degree in Business Administration .\nSystem: What course did you like best ?\nUser: Project Management . I was very interested in this course when I was a student . And I think it's very useful for my present work .\nSystem: Do you feel that you have received a good general training ?\nUser: Yes , I have studied in an English training program and a computer training program since I graduated from university . I am currently studying Finance at a training school .\nSystem: English and computer skills are comparatively important to this post , especially in the starting period . Wharfs your ability in these two fields ?\nUser: I passed college English Test Band - 4 , with good skill in listening , speaking , reading and writing . I haven't got any certificate of computer skills , because I don ’ t think certificates are necessary if what's needed is merely operating a computer . I think , to know how to use a computer is more important . And I'm quite familiar with Microsoft Office",
+        "translated_dialogue": "System: 専攻は何ですか？\nUser: 経営学です。特にマーケティングに興味があります。\nSystem: どこの大学に通っていますか？\nUser: 蘇州大学に通っていました。\nSystem: 学位は取得しましたか？\nUser: はい。経営学の学士号を取得しました。\nSystem: どの授業が一番好きでしたか？\nUser: プロジェクトマネジメントです。学生時代はこの授業に非常に興味を持ちました。現在の仕事にも非常に役立っていると思います。\nSystem: 総合的なトレーニングは十分に受けたと感じますか？\nUser: はい。大学卒業後は英語研修プログラムとコンピューター研修プログラムを修了しました。現在は専門学校でファイナンスを学んでいます。\nSystem: この職種では、特に初期段階において英語力とコンピュータースキルが比較的重要です。この2分野の能力はどの程度ですか？\nUser: 大学英語検定4級に合格しており、リスニング・スピーキング・リーディング・ライティングのスキルは良好です。コンピュータースキルの証明書は取得していません。単に操作するだけなら証明書は必要ないと考えているためです。コンピューターの使い方を理解していることがより重要だと考えています。また、Microsoft Officeにはかなり精通しています。",
+        "annotations": [
+            {
+                "entity": "marketing",
+                "axis": "wanting",
+                "sub_axis": "interest",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Project Management",
+                "axis": "wanting",
+                "sub_axis": "interest",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Project Management",
+                "axis": "need",
+                "sub_axis": "functional",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "certificate of computer skills",
+                "axis": "need",
+                "sub_axis": "functional",
+                "polarity": "negative",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Project Management",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 45,
+        "original_index": 10812,
+        "original_dialogue": "System: Are there any scenic spots nearby ?\nUser: You can go to ZhongShan Park .\nSystem: Have you ever been there ?\nUser: Yes . The scenery there is so breathtaking\nSystem: Really ?\nUser: Yes , of course . It's really worth visiting .",
+        "translated_dialogue": "System: 近くに観光スポットはありますか？\nUser: 中山公園に行けますよ。\nSystem: 行ったことありますか？\nUser: はい。あそこの景色は息をのむほど美しいです\nSystem: 本当ですか？\nUser: ええ、もちろん。本当に訪れる価値がありますよ。",
+        "annotations": [
+            {
+                "entity": "ZhongShan Park",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 46,
+        "original_index": 1,
+        "original_dialogue": "System: Say , Jim , how about going for a few beers after dinner ?\nUser: You know that is tempting but is really not good for our fitness .\nSystem: What do you mean ? It will help us to relax .\nUser: Do you really think so ? I don't . It will just make us fat and act silly . Remember last time ?\nSystem: I guess you are right.But what shall we do ? I don't feel like sitting at home .\nUser: I suggest a walk over to the gym where we can play pingpong and meet some of our friends .\nSystem: That's a good idea . I hear Mary and Sally often go there to play pingpong.Perhaps we can make a foursome with them .\nUser: Sounds great to me ! If they are willing , we could ask them to go dancing with us.That is excellent exercise and fun , too .\nSystem: Good.Let ' s go now .\nUser: All right .",
+        "translated_dialogue": "System: ねえ、ジム、夕食後にビールでも飲みにいかない？\nUser: 確かに魅力的だけど、本当に健康に良くないよ。\nSystem: どういう意味？リラックスできるじゃないか。\nUser: 本当にそう思う？僕は違う。ただ太ってバカみたいな行動をするだけさ。前回を覚えてる？\nSystem: 確かにそうかも。でもどうする？家にいるのもつまらないし。\nUser: ジムまで歩いて行って、卓球でもしながら友達に会おうよ。\nSystem: それはいい考えだ。メアリーとサリーがよくピンポンしに行ってるって聞いたよ。彼女たちと一緒に4人でやれるかも。\nUser: いいね！もし彼女たちがOKなら、一緒にダンスに行こうって誘えるよ。運動にもなるし楽しいしね。\nSystem: よし、今すぐ行こう。\nUser: 了解。",
+        "annotations": [
+            {
+                "entity": "beer",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Night"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "beer",
+                "axis": "need",
+                "sub_axis": "personal",
+                "polarity": "negative",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "pinpong",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "group"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "dancing",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "group"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "dancing",
+                "axis": "need",
+                "sub_axis": "functional",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "group"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "dancing",
+                "axis": "liking",
+                "sub_axis": "stimulation",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "group"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 47,
+        "original_index": 3,
+        "original_dialogue": "System: Can you study with the radio on ?\nUser: No , I listen to background music .\nSystem: What is the difference ?\nUser: The radio has too many comerials .\nSystem: That's true , but then you have to buy a record player .",
+        "translated_dialogue": "System: ラジオを流しながら勉強できる？\nUser: いや、僕はBGMを聴いてるんだ。\nSystem: 何が違うんだ？\nUser: ラジオはCMが多すぎるんだ。\nSystem: 確かにそうだな、でもそれならレコードプレーヤーを買わなきゃいけないぞ。",
+        "annotations": [
+            {
+                "entity": "background music",
+                "axis": "need",
+                "sub_axis": "functional",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "Studying"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "radio",
+                "axis": "need",
+                "sub_axis": "functional",
+                "polarity": "negative",
+                "intensity": "mid",
+                "context": [
+                    "Studying"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 48,
+        "original_index": 11,
+        "original_dialogue": "System: Do you like cooking ?\nUser: Yes . I like cooking very much . I got this hobby when I was 12 years sold .\nSystem: Why do you like it ?\nUser: I have no idea . I like cooking by myself . I like to taste delicious food .\nSystem: That's wonderful !\nUser: And I love trying new recipes , which I usually test with my friends . You can come , too .\nSystem: Really ? I hope I can have a chance to taste it . Don't forget to tell me .\nUser: Certainly .",
+        "translated_dialogue": "System: 料理は好き？\nUser: うん。すごく好きだよ。12歳の時にこの趣味を始めたんだ。\nSystem: どうして好きなの？\nUser: 理由はわからないけど、自分で料理するのが好き。美味しいものを味わうのが好きなんだ。\nSystem: それは素晴らしいね！\nUser: それに新しいレシピを試すのも大好きで、大抵は友達と一緒に試作するんだ。君も来ていいよ。\nSystem: 本当？ぜひ味見させてほしいな。忘れないで教えてね。\nUser: もちろん。",
+        "annotations": [
+            {
+                "entity": "cooking",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "cooking",
+                "axis": "liking",
+                "sub_axis": "aesthetic/sensory",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "trying new recipes",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "positive",
+                "intensity": "high",
+                "context": [
+                    "group"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    },
+    {
+        "dialogue_id": 49,
+        "original_index": 30,
+        "original_dialogue": "System: Do you want black or white coffee ?\nUser: White , please\nSystem: Look ! there's a Folk concert tomorrow evening . Do you Want to go ?\nUser: I don't like Folk music very much .\nSystem: What kind of music do you like ?\nUser: I like classical music . Do you ?\nSystem: Not very much . Classical music sends me to sleep\nUser: I don't believe you .\nSystem: It ’ s true .\nUser: You are funny !\nSystem: So are you ! How about another coffee ?",
+        "translated_dialogue": "System: ブラックコーヒーとホワイトコーヒー、どちらがいい？\nUser: ホワイトでお願いします\nSystem: 見て！明日の夜にフォークコンサートがあるよ。行かない？\nUser: あまりフォーク音楽は好きじゃないんだ。\nSystem: どんな音楽が好きなの？\nUser: クラシック音楽が好きだよ。君は？\nSystem: あまり好きじゃないんだ。クラシック音楽は眠くなるんだ\nUser: 嘘でしょ。\nSystem: 本当だよ。\nUser: あなたって面白い！\nSystem: 君だって！もう一杯コーヒー飲む？",
+        "annotations": [
+            {
+                "entity": "white coffee",
+                "axis": "wanting",
+                "sub_axis": "goal",
+                "polarity": "positive",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "Folk music",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "negative",
+                "intensity": "low",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            },
+            {
+                "entity": "classical music",
+                "axis": "liking",
+                "sub_axis": "",
+                "polarity": "negative",
+                "intensity": "mid",
+                "context": [
+                    "None"
+                ],
+                "explicitness": "explicit"
+            }
+        ]
+    }
+]

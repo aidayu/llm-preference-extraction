@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-preference-extraction"
+version = "0.1.0"
+description = "LLMを用いた対話からの嗜好抽出と知識グラフ構築"
+authors = [
+  { name = "Yuto Aida" },
+]
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "openai>=1.0.0",
+    "python-dotenv",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "matplotlib",
+    "japanize-matplotlib>=1.1.3",
+    "streamlit",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.ruff]
+line-length = 99
+src = ["llm_preference_extraction", "experiments", "app"]
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["llm_preference_extraction"]
+force-sort-within-sections = true
