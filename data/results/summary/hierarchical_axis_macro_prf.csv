@@ -1,0 +1,8 @@
+Hierarchical Axis - Macro
+
+Model,Precision,Recall,F1
+gpt-5.2,0.7326,0.6302,0.6531
+gpt-4o,0.5349,0.4066,0.4396
+gpt-4o-mini,0.4884,0.3969,0.4188
+gemma3:27b,0.5058,0.4320,0.4475
+llama3.1:8b,0.4012,0.2992,0.3232

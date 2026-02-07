@@ -8,6 +8,10 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import matplotlib
+
+# プロジェクトルート
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+FIGURES_DIR = PROJECT_ROOT / "report" / "figures"
 import numpy as np
 import pandas as pd
 
@@ -37,7 +41,7 @@ plt.rcParams['axes.unicode_minus'] = False
 # === ユーザー設定 ===
 # グラフ化したい評価結果CSVのパスをここに貼り付けてください
 # =====================================================================
-EVALUATION_CSV_PATH = "/home/y-aida/Programs/preference-kg/preference_kg/results/evaluations/hierarchical_axis_macro_summary_20260127_154732.csv"
+EVALUATION_CSV_PATH = "data/results/comparison_results_macrof1.csv"
 # =====================================================================
 
 
@@ -546,26 +550,29 @@ def main():
     # Hierarchical Axis比較モード
     if args.hierarchical:
         data = parse_hierarchical_summary_csv(str(csv_path))
-        output = args.output or str(csv_path.with_suffix("")) + "_hierarchical.pdf"
+        FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+        output = args.output or str(FIGURES_DIR / csv_path.stem) + "_hierarchical.pdf"
         create_hierarchical_comparison_chart(data, output, args.title)
         return
     
     # モデル比較モード
     if args.compare:
         data = parse_comparison_csv(str(csv_path))
-        output = args.output or str(csv_path.with_suffix("")) + "_comparison.png"
+        FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+        output = args.output or str(FIGURES_DIR / csv_path.stem) + "_comparison.png"
         create_model_comparison_chart(data, output, args.title)
         return
     
     # 通常モード（単一モデルの評価結果）
     data = parse_evaluation_csv(str(csv_path))
+    FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     
     if args.type in ["f1", "both"]:
-        output = args.output or str(csv_path.with_suffix("")) + "_f1.png"
+        output = args.output or str(FIGURES_DIR / csv_path.stem) + "_f1.png"
         create_f1_comparison_chart(data, output, args.title)
     
     if args.type in ["prf", "both"]:
-        output = str(csv_path.with_suffix("")) + "_prf.png"
+        output = str(FIGURES_DIR / csv_path.stem) + "_prf.png"
         create_precision_recall_chart(data, output)
 
 

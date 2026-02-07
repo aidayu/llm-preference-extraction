@@ -34,7 +34,7 @@ from llm_preference_extraction.evaluation import (
 # === ユーザー設定 ===
 # 評価したい実験結果のパスをここに貼り付けてください
 # =====================================================================
-EXPERIMENT_RESULTS_PATH = PROJECT_ROOT / "data" / "results" / "experiments" / "gpt-4o" / "experiment_results.json"
+EXPERIMENT_RESULTS_PATH = "/home/y-aida/Programs/llm-preference-extraction/data/results/experiments/llama3.1:8b/experiment_results_20260208_035002.json"
 # =====================================================================
 
 RESULTS_ROOT = PROJECT_ROOT / "data" / "results"
@@ -257,7 +257,7 @@ def main(
             else datetime.now().strftime("%Y%m%d_%H%M%S")
         )
         model_name = _exp_path.parent.name
-        evaluation_output_dir = RESULTS_ROOT / "evaluations" / model_name / experiment_timestamp
+        evaluation_output_dir = RESULTS_ROOT / "raw" / "evaluations" / model_name / experiment_timestamp
 
     print(f"評価結果出力先: {evaluation_output_dir}")
 

@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "created_at": "2026-01-24T19:47:48.883430",
+    "users": [
+      "user00"
+    ],
+    "generation_models": [
+      "gpt-4o"
+    ],
+    "analysis_models": [
+      "gpt-4o"
+    ],
+    "total_triples": 14,
+    "explicit_count": 9,
+    "implicit_count": 5
+  },
+  "triples": [
+    {
+      "head": "user00",
+      "relation": "liking__general",
+      "tail": "ゲーム",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "medium",
+        "context_tags": [
+          "location-home"
+        ],
+        "original_mention": "ゲームは原神で一人で探索したり, league of legends で友達と一緒に遊んだりとゲームを変えれば無限の楽しみ方があるところ.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "wanting__goal",
+      "tail": "ゲーム",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "low",
+        "context_tags": [
+          "location-home"
+        ],
+        "original_mention": "実際何らかの強制力がないと楽なゲームに流されてしまう.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "liking__stimulation",
+      "tail": "ジャグリング",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "medium",
+        "context_tags": [
+          "activity-relaxing"
+        ],
+        "original_mention": "ジャグリングはできる技を増やす事自体楽しいし, サークルメンバーとの交流も魅力の一つ.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "wanting__interest",
+      "tail": "研究",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "medium",
+        "context_tags": [
+          "location-workplace"
+        ],
+        "original_mention": "研究は自分の本当に興味があることについて既存の研究を調べ, 知識を深めたうえで更に自分でどう高められるかを検証するのが楽しい.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "wanting__goal",
+      "tail": "研究",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "low",
+        "context_tags": [
+          "location-workplace"
+        ],
+        "original_mention": "学会発表を目標にすると、強制力が働くかもしれないんですね.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "liking__aesthetic_sensory",
+      "tail": "EGOISTの曲",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "high",
+        "context_tags": [
+          "condition-stressed"
+        ],
+        "original_mention": "気分が落ち込んだ時や気分を上げたいときは好きな曲を聞くと効果的. 特にEGOISTの曲は最高.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "liking__stimulation",
+      "tail": "アニメ",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "medium",
+        "context_tags": [
+          "condition-bored"
+        ],
+        "original_mention": "鬱要素があるやつと感動するやつが好き.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "liking__stimulation",
+      "tail": "メイドインアビス",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "medium",
+        "context_tags": [],
+        "original_mention": "メイドインアビスの2期の鬱要素にはゾクゾクした.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "liking__stimulation",
+      "tail": "ヴァイオレット・エヴァーガーデン",
+      "type": "explicit",
+      "attributes": {
+        "polarity": "positive",
+        "intensity": "medium",
+        "context_tags": [],
+        "original_mention": "ヴァイオレット・エヴァーガーデンは本当に泣ける.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "implicit_preference",
+      "tail": "友人との交流を重視する傾向がある",
+      "type": "implicit",
+      "attributes": {
+        "original_mention": "お金はあまり使っておらず, 強いて言えば友人との外食に使っている.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "implicit_preference",
+      "tail": "目標達成のために自己制御が必要であると感じている",
+      "type": "implicit",
+      "attributes": {
+        "original_mention": "実際何らかの強制力がないと楽なゲームに流されてしまう.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "implicit_preference",
+      "tail": "目標設定がモチベーションの向上に役立つと考えている",
+      "type": "implicit",
+      "attributes": {
+        "original_mention": "学会発表を目標に据えればそこに向けて強制力がはたらくかも.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "implicit_preference",
+      "tail": "音楽を感情の調整に利用する傾向がある",
+      "type": "implicit",
+      "attributes": {
+        "original_mention": "気分が落ち込んだ時や気分を上げたいときは好きな曲を聞くと効果的.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    },
+    {
+      "head": "user00",
+      "relation": "implicit_preference",
+      "tail": "新しい技術やスキルの習得を楽しむ傾向がある",
+      "type": "implicit",
+      "attributes": {
+        "original_mention": "ジャグリングはできる技を増やす事自体楽しいし, サークルメンバーとの交流も魅力の一つ.",
+        "dialogue_id": 0,
+        "source_timestamp": "2026-01-24T18:27:05.893313"
+      }
+    }
+  ]
+}

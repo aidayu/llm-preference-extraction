@@ -114,3 +114,21 @@ data/output_samples/*
 # OS
 .DS_Store
 Thumbs.db
+
+# Python typical
+__pycache__/
+*.pyc
+
+# Data - Ignore raw logs and heavy intermediate files
+data/results/raw/
+data/results/details/
+
+# Ignore raw chat logs containing privacy
+data/output_samples/raw_chat_logs*
+
+# Allow summary CSVs and Samples (ホワイトリスト方式)
+!data/results/summary/
+!data/output_samples/*.json
+
+# Reports - Ignore PDFs if you want to force PNG usage
+reports/figures/*.pdf

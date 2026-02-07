@@ -35,13 +35,15 @@ load_dotenv()
 # === ユーザー設定 ===
 # =====================================================================
 # データセットパス
-DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "dataset.json"
+# DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "dailydialog_annotated_integrated.json"
+DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "test.json"
 
 # デフォルトモデル設定
-DEFAULT_MODEL_NAME = "gpt-4o"
+DEFAULT_MODEL_NAME = "llama3.1:8b"
 
 # Few-shot用のdialogue_id
-FEW_SHOT_IDS = [0, 18, 46]
+# FEW_SHOT_IDS = [0, 18, 46]
+FEW_SHOT_IDS = [0, 1, 2]
 # =====================================================================
 
 
@@ -131,7 +133,7 @@ def run_experiment(
 
     # 結果保存
     print("\n[5/5] 結果保存中...")
-    output_dir = PROJECT_ROOT / "data" / "results" / "experiments" / model_name
+    output_dir = PROJECT_ROOT / "data" / "results" / "raw" / "experiments" / model_name
     output_dir.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
