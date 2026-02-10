@@ -11,7 +11,7 @@ import matplotlib
 
 # プロジェクトルート
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-FIGURES_DIR = PROJECT_ROOT / "report" / "figures"
+FIGURES_DIR = PROJECT_ROOT / "reports" / "figures"
 import numpy as np
 import pandas as pd
 
@@ -41,7 +41,7 @@ plt.rcParams['axes.unicode_minus'] = False
 # === ユーザー設定 ===
 # グラフ化したい評価結果CSVのパスをここに貼り付けてください
 # =====================================================================
-EVALUATION_CSV_PATH = "data/results/comparison_results_macrof1.csv"
+EVALUATION_CSV_PATH = "data/results/summary/comparison_results_macrof1.csv"
 # =====================================================================
 
 
