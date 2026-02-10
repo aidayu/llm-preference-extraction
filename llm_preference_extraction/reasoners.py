@@ -32,6 +32,7 @@ def infer_implicit_preferences(
     dialogue_text: str,
     dialogue_id: int,
     explicit_preferences: list[dict],
+    system_prompt: str,
 ) -> dict:
     """
     暗黙的嗜好を推論する
@@ -42,6 +43,7 @@ def infer_implicit_preferences(
         dialogue_text: 対話テキスト
         dialogue_id: 対話ID
         explicit_preferences: 既に抽出済みの明示的嗜好リスト
+        system_prompt: システムプロンプト
 
     Returns:
         暗黙的嗜好の推論結果
@@ -50,11 +52,10 @@ def infer_implicit_preferences(
     explicit_info = f"\n既に抽出済みの明示的嗜好: {explicit_entities}" if explicit_entities else ""
 
     try:
-        prompt = load_implicit_inference_prompt()
         completion = client.chat.completions.create(
             model=model_name,
             messages=[
-                {"role": "system", "content": prompt},
+                {"role": "system", "content": system_prompt},
                 {
                     "role": "user",
                     "content": f"以下の対話から暗黙的嗜好を推論してください。{explicit_info}\n\n対話:\n{dialogue_text}",

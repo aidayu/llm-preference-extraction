@@ -58,7 +58,8 @@ def run_experiment(
     dataset_path: Path = DEFAULT_DATASET_PATH,
     base_url: str | None = None,
     api_key: str | None = None,
-) -> str:
+    save_path: Path | None = None,
+) -> list:
     """
     抽出実験を実行する
 
@@ -67,9 +68,10 @@ def run_experiment(
         dataset_path: データセットのパス
         base_url: Ollama等のローカルサーバーURL（Noneの場合はOpenAI API）
         api_key: APIキー
+        save_path: 結果を保存するパス
 
     Returns:
-        str: 結果ファイルのパス
+        list: 抽出結果
     """
     print(f"\n{'='*60}")
     print(f"=== 嗜好抽出実験開始: {model_name} ===")
@@ -82,16 +84,16 @@ def run_experiment(
     print(f"Client: {'Ollama' if base_url else 'OpenAI API'}")
 
     # データセット読み込み
-    print("\n[1/5] データセット読み込み中...")
+    print("\n[1/4] データセット読み込み中...")
     dataset = load_dataset(dataset_path)
     print(f"総対話数: {len(dataset)}")
 
     # Few-shot例の作成
-    print("\n[2/5] Few-shot例作成中...")
+    print("\n[2/4] Few-shot例作成中...")
     few_shot_examples_text = create_few_shot_examples(dataset, FEW_SHOT_IDS)
 
     # プロンプトテンプレート読み込み
-    print("\n[3/5] プロンプトテンプレート読み込み中...")
+    print("\n[3/4] プロンプトテンプレート読み込み中...")
     prompt_template = load_prompt_template()
     system_prompt = prompt_template.replace("{few_shot_examples}", few_shot_examples_text)
 
@@ -103,7 +105,7 @@ def run_experiment(
     print(f"テスト対話数: {len(test_dialogues)}")
 
     # 嗜好抽出実行
-    print("\n[4/5] 嗜好抽出実行中...")
+    print("\n[4/4] 嗜好抽出実行中...")
     results = []
 
     for dialogue_data in tqdm(test_dialogues, desc=f"Processing [{model_name}]"):
@@ -131,13 +133,7 @@ def run_experiment(
 
         results.append(result_with_annotation)
 
-    # 結果保存
-    print("\n[5/5] 結果保存中...")
-    output_dir = PROJECT_ROOT / "data" / "results" / "raw" / "experiments" / model_name
-    output_dir.mkdir(parents=True, exist_ok=True)
-
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = output_dir / f"experiment_results_{timestamp}.json"
 
     experiment_metadata = {
         "experiment_info": {
@@ -150,27 +146,45 @@ def run_experiment(
         "results": results,
     }
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(experiment_metadata, f, indent=2, ensure_ascii=False)
+    if save_path:
+        # 結果保存
+        print("\n結果保存中...")
 
-    print(f"\n✓ 実験完了！")
-    print(f"結果保存先: {output_path}")
-    print(f"処理対話数: {len(results)}")
+        if save_path is None:
+            output_dir = PROJECT_ROOT / "data" / "results" / "raw" / "experiments" / model_name
+        else:output_dir = save_path / model_name
+        output_dir.mkdir(parents=True, exist_ok=True)
 
-    # 簡易統計
-    total_extracted = sum(
-        len(r["extracted_preferences"].get("preferences", [])) for r in results
-    )
-    total_ground_truth = sum(len(r["ground_truth_annotations"]) for r in results)
-    print(f"\n統計:")
-    print(f"  - 抽出された嗜好数: {total_extracted}")
-    print(f"  - Ground truth嗜好数: {total_ground_truth}")
+        output_path = output_dir / f"experiment_results_{timestamp}.json"
 
-    return str(output_path)
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(experiment_metadata, f, indent=2, ensure_ascii=False)
+
+        print(f"\n✓ 実験完了！")
+        print(f"結果保存先: {output_path}")
+        print(f"処理対話数: {len(results)}")
+
+        # 簡易統計
+        total_extracted = sum(
+            len(r["extracted_preferences"].get("preferences", [])) for r in results
+        )
+        total_ground_truth = sum(len(r["ground_truth_annotations"]) for r in results)
+        print(f"\n統計:")
+        print(f"  - 抽出された嗜好数: {total_extracted}")
+        print(f"  - Ground truth嗜好数: {total_ground_truth}")
+
+    return experiment_metadata
 
 
 if __name__ == "__main__":
-    model = DEFAULT_MODEL_NAME
+    parser = argparse.ArgumentParser(description="嗜好抽出実験スクリプト")
+    parser.add_argument("--model", type=str, default=DEFAULT_MODEL_NAME)
+    parser.add_argument("--dataset", type=Path, default=DEFAULT_DATASET_PATH)
+
+    args = parser.parse_args()
+
+    model = args.model
+    dataset_path = args.dataset
 
     # Ollamaモデルのパターンにマッチするかチェック
     ollama_patterns = ["llama", "gemma", "mistral", "phi", "qwen", "codellama"]
@@ -179,14 +193,14 @@ if __name__ == "__main__":
     if is_ollama:
         run_experiment(
             model_name=model,
-            dataset_path=DEFAULT_DATASET_PATH,
+            dataset_path=dataset_path,
             base_url="http://localhost:11434/v1",
             api_key=model,
         )
     else:
         run_experiment(
             model_name=model,
-            dataset_path=DEFAULT_DATASET_PATH,
+            dataset_path=dataset_path,
             base_url=None,
             api_key=None,
         )

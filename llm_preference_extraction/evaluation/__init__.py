@@ -35,7 +35,11 @@ from .semantic_similarity import (
     ENTITY_SIMILARITY_THRESHOLD,
 )
 from .dialogue_evaluator import (
+    MatchComparison,
+    DialogueComparison,
     DialogueResult,
+    collect_comparisons,
+    compute_scores,
     evaluate_dialogue,
 )
 from .aggregators import (
@@ -74,7 +78,11 @@ __all__ = [
     "get_cache_info",
     "ENTITY_SIMILARITY_THRESHOLD",
     # dialogue_evaluator
+    "MatchComparison",
+    "DialogueComparison",
     "DialogueResult",
+    "collect_comparisons",
+    "compute_scores",
     "evaluate_dialogue",
     # aggregators
     "AggregatedMetrics",
