@@ -189,11 +189,3 @@ llm-preference-extraction/
 | 類似度計算 | OpenAI Embeddings |
 | 評価 | MacroF1, MicroF1, WeightedF1 |
 | アプリ | Streamlit |
-| パッケージ管理 | uv + hatchling |
-| コード品質 | Ruff (lint + format), pytest |
-
----
-
-## ライセンス
-
-MIT License
