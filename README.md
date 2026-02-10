@@ -62,24 +62,11 @@ Axis → Sub-Axis の階層構造を考慮した Hierarchical Precision / Recall
 
 ---
 
-## パイプライン全体像
+## 提案手法
 
-```mermaid
-graph LR
-    A["対話データ"] --> B["Few-shot + CoT\n明示的嗜好抽出"]
-    B --> C["暗黙的嗜好推論"]
-    C --> D["嗜好統合"]
-    D --> E["KGトリプレット構築"]
-    E --> F["知識グラフ\n(JSON)"]
+対話文から嗜好スキーマと LLM を用いて明示的嗜好を抽出し、さらに暗黙的な嗜好を推論してユーザ嗜好知識グラフを構築します。
 
-    G["Ground Truth"] --> H["評価パイプライン"]
-    D --> H
-    H --> I["Macro F1\nP / R / F1"]
-
-    style A fill:#e3f2fd
-    style F fill:#e8f5e9
-    style I fill:#fff3e0
-```
+![提案手法](docs/images/method_graph.png)
 
 ---
 
