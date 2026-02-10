@@ -1,10 +1,10 @@
 # LLM Preference Extraction
 
-**対話からユーザー嗜好を自動抽出し、知識グラフとして構造化するパイプライン**
+**独自の3軸嗜好スキーマに基づき、対話からユーザー嗜好を構造化抽出し、知識グラフを構築するパイプライン**
 
-LLM（大規模言語モデル）を用いて、日常対話に含まれる明示的・暗黙的な嗜好を多軸で抽出し、構造化された知識グラフ（KG）を構築します。5つのモデル（GPT-5.2 / GPT-4o / GPT-4o-mini / Gemma3:27b / Llama3.1:8b）を用いた定量評価により、抽出精度を多角的に検証しています。
+Liking（快楽的嗜好）/ Wanting（動機的嗜好）/ Need（実利的嗜好）の3軸スキーマを設計し、LLM による Few-shot + Chain-of-Thought 抽出と暗黙的嗜好推論を組み合わせて、対話データからユーザー嗜好を知識グラフとして構造化します。5つのモデル（GPT-5.2 / GPT-4o / GPT-4o-mini / Gemma3:27b / Llama3.1:8b）を用いた定量評価により抽出精度を多角的に検証しています。
 
-![対話アプリ画面](docs/images/image.png)
+![提案手法](docs/images/method_graph.png)
 
 ---
 
@@ -21,12 +21,11 @@ LLM（大規模言語モデル）を用いて、日常対話に含まれる明�
 
 ## 特徴
 
-- **3軸嗜好スキーマ** — Liking（快楽的嗜好）/ Wanting（動機的嗜好）/ Need（実利的嗜好）の体系で嗜好を分類し、sub_axis・polarity・intensity・context を付与
+- **3軸嗜好スキーマ** — Liking / Wanting / Need の体系で嗜好を分類し、sub_axis・polarity・intensity・context を付与
 - **Few-shot + CoT 抽出** — Chain-of-Thought 推論を伴う Few-shot プロンプトで明示的嗜好を構造化抽出
 - **暗黙的嗜好推論** — 対話に直接現れない嗜好を LLM で推論し、元の発話と紐づけ
 - **知識グラフ構築** — 抽出結果を `(user, relation, entity)` トリプレットに変換
 - **多角的評価フレームワーク** — Entity / Axis / Polarity / Intensity / Context の各指標で Micro・Macro・Weighted F1 を算出
-- **Streamlit 対話アプリ** — 嗜好把握のためのインタビュー対話を実施し、リアルタイムで嗜好を抽出
 
 ---
 
@@ -59,14 +58,6 @@ Axis → Sub-Axis の階層構造を考慮した Hierarchical Precision / Recall
 | gpt-4o-mini | 0.488 | 0.397 | 0.419 |
 | gemma3:27b | 0.506 | 0.432 | 0.448 |
 | llama3.1:8b | 0.401 | 0.299 | 0.323 |
-
----
-
-## 提案手法
-
-対話文から嗜好スキーマと LLM を用いて明示的嗜好を抽出し、さらに暗黙的な嗜好を推論してユーザ嗜好知識グラフを構築します。
-
-![提案手法](docs/images/method_graph.png)
 
 ---
 
@@ -103,6 +94,18 @@ Axis → Sub-Axis の階層構造を考慮した Hierarchical Precision / Recall
 
 ---
 
+## 対話アプリ
+
+上記の嗜好抽出パイプラインを活用した、Streamlit ベースのインタビュー対話システムです。ユーザーとの対話を通じて嗜好を収集し、知識グラフとして蓄積します。
+
+![対話アプリ画面](docs/images/image.png)
+
+```bash
+make app    # http://localhost:8501
+```
+
+---
+
 ## セットアップ
 
 ```bash
@@ -129,12 +132,6 @@ cp .env.example .env
 make extract     # 対話から嗜好を抽出
 make evaluate    # Ground Truth と比較評価
 make plot        # 結果グラフ描画 → reports/figures/
-```
-
-### 対話アプリ
-
-```bash
-make app         # http://localhost:8501
 ```
 
 ### 開発
