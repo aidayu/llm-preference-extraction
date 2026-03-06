@@ -39,7 +39,7 @@ load_dotenv()
 DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "test.json"
 
 # デフォルトモデル設定
-DEFAULT_MODEL_NAME = "llama3.1:8b"
+DEFAULT_MODEL_NAME = "gpt-4o-mini"
 
 # Few-shot用のdialogue_id
 # FEW_SHOT_IDS = [0, 18, 46]

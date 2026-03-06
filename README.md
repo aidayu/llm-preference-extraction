@@ -108,6 +108,8 @@ make app    # http://localhost:8501
 
 ## セットアップ
 
+**必要環境**: Python ≥ 3.11 / [uv](https://docs.astral.sh/uv/) / OpenAI API Key
+
 ```bash
 git clone <repository-url>
 cd llm-preference-extraction
@@ -118,9 +120,15 @@ source .venv/bin/activate
 
 # .env に OPENAI_API_KEY を設定
 cp .env.example .env
+# .env を編集し、自分の OpenAI API Key を記入してください
 ```
 
-**必要環境**: Python ≥ 3.11 / [uv](https://docs.astral.sh/uv/) / OpenAI API Key
+> [!NOTE]
+> Ollama のモデル (Gemma3:27b / Llama3.1:8b) を使用する場合は、別途 [Ollama](https://ollama.com/) のインストールとモデルの取得が必要です。
+> ```bash
+> ollama pull gemma3:27b
+> ollama pull llama3.1:8b
+> ```
 
 ---
 
@@ -129,9 +137,13 @@ cp .env.example .env
 ### 実験パイプライン
 
 ```bash
-make extract     # 対話から嗜好を抽出
-make evaluate    # Ground Truth と比較評価
-make plot        # 結果グラフ描画 → reports/figures/
+make extract                # 対話から嗜好を抽出（デフォルト: gpt-4o-mini）
+make extract MODEL=gpt-4o   # モデルを指定して抽出
+make extract MODEL=gpt-5.2
+make extract MODEL=gemma3:27b
+make extract MODEL=llama3.1:8b
+make evaluate               # Ground Truth と比較評価
+make plot                   # 結果グラフ描画 → reports/figures/
 ```
 
 ### 開発

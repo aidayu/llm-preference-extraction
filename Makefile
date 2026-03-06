@@ -44,10 +44,11 @@ format:
 app:
 	streamlit run app/main.py
 
-## 抽出実験実行
+## 抽出実験実行 (例: make extract MODEL=gpt-4o)
+MODEL ?= gpt-4o-mini
 .PHONY: extract
 extract:
-	$(PYTHON_INTERPRETER) experiments/run_extraction.py
+	$(PYTHON_INTERPRETER) experiments/run_extraction.py --model $(MODEL)
 
 ## 評価実行
 .PHONY: evaluate
