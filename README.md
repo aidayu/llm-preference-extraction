@@ -137,21 +137,14 @@ cp .env.example .env
 ### 実験パイプライン
 
 ```bash
-make extract                # 対話から嗜好を抽出（デフォルト: gpt-4o-mini）
-make extract MODEL=gpt-4o   # モデルを指定して抽出
-make extract MODEL=gpt-5.2
-make extract MODEL=gemma3:27b
-make extract MODEL=llama3.1:8b
-make evaluate               # Ground Truth と比較評価
-make plot                   # 結果グラフ描画 → reports/figures/
-```
+# 1. 使用するモデルを選んで抽出（いずれか1つを実行）
+make extract                       # デフォルト: gpt-4o-mini
+make extract MODEL=gpt-4o         # または他のモデルを指定
+# 利用可能なモデル: gpt-5.2 / gpt-4o / gpt-4o-mini / gemma3:27b / llama3.1:8b
 
-### 開発
-
-```bash
-make lint        # ruff によるリント
-make format      # コード整形
-make test        # テスト実行
+# 2. 評価・可視化
+make evaluate    # Ground Truth と比較評価
+make plot        # 結果グラフ描画 → reports/figures/
 ```
 
 ---
