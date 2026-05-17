@@ -108,7 +108,7 @@ make app    # http://localhost:8501
 
 ## セットアップ
 
-**必要環境**: Python ≥ 3.11 / [uv](https://docs.astral.sh/uv/) / OpenAI API Key
+**必要環境**: Python ≥ 3.11 / [uv](https://docs.astral.sh/uv/) / OpenAI API Key または Ollama
 
 ```bash
 git clone <repository-url>
@@ -121,31 +121,80 @@ source .venv/bin/activate
 # .env に OPENAI_API_KEY を設定
 cp .env.example .env
 # .env を編集し、自分の OpenAI API Key を記入してください
+
+# 環境チェック
+make verify
 ```
 
 > [!NOTE]
 > Ollama のモデル (Gemma3:27b / Llama3.1:8b) を使用する場合は、別途 [Ollama](https://ollama.com/) のインストールとモデルの取得が必要です。
 > ```bash
+> ollama serve
 > ollama pull gemma3:27b
 > ollama pull llama3.1:8b
 > ```
 
 ---
 
-## 使い方
+## クイックスタート (test.json)
 
-### 実験パイプライン
+最小構成で動作確認する手順です。`data/ground_truth/test.json` が既定で使われます。
+
+```bash
+# 抽出 (OpenAI / Ollama どちらも可)
+make extract MODEL=gpt-4o-mini
+
+# 評価: 直近の結果ファイルを指定
+make evaluate RESULTS_PATH=data/results/raw/experiments/gpt-4o-mini/experiment_results_YYYYMMDD_HHMMSS.json
+
+# 図の生成: 同じ RESULTS_PATH を渡すと評価CSVを自動検出してグラフ化
+make plot RESULTS_PATH=data/results/raw/experiments/gpt-4o-mini/experiment_results_YYYYMMDD_HHMMSS.json
+```
+
+## フル再現 (DailyDialog 全量)
+
+```bash
+# 全量データで抽出
+make extract MODEL=gpt-5.2 DATASET=data/ground_truth/dailydialog_annotated_integrated.json
+
+# 評価
+make evaluate RESULTS_PATH=data/results/raw/experiments/gpt-5.2/experiment_results_YYYYMMDD_HHMMSS.json
+```
+
+## 実験パイプライン
 
 ```bash
 # 1. 使用するモデルを選んで抽出（いずれか1つを実行）
-make extract                       # デフォルト: gpt-4o-mini
+make extract                       # デフォルト: gpt-4o-mini (test.json)
 make extract MODEL=gpt-4o         # または他のモデルを指定
 # 利用可能なモデル: gpt-5.2 / gpt-4o / gpt-4o-mini / gemma3:27b / llama3.1:8b
 
 # 2. 評価・可視化
-make evaluate    # Ground Truth と比較評価
-make plot        # 結果グラフ描画 → reports/figures/
+make evaluate RESULTS_PATH=...           # Ground Truth と比較評価
+make plot RESULTS_PATH=...               # 評価CSVを自動検出してグラフ化 → reports/figures/
+
+# オプション: 評価CSVを直接指定する場合
+make plot CSV_PATH=data/results/raw/evaluations/<model>/<timestamp>/evaluation_*.csv
+
+# オプション: モデル比較グラフを生成する場合（summary CSV を使用）
+make plot CSV_PATH=data/results/summary/comparison_results_macrof1.csv PLOT_COMPARE=1
 ```
+
+## 結果の保存先
+
+- 抽出結果: `data/results/raw/experiments/<model>/experiment_results_YYYYMMDD_HHMMSS.json`
+- 評価結果: `data/results/raw/evaluations/<model>/<timestamp>/evaluation_YYYYMMDD_HHMMSS.csv`
+- 可視化: `reports/figures/` (グラフファイルは原則無視。README.md に埋め込んでいる2ファイルのみ git 追跡)
+
+## トラブルシュート
+
+- `make: uv: そのようなファイルやディレクトリはありません`
+  - `uv` の PATH が通っていない可能性があります。
+  - 例: `export PATH="$HOME/.local/bin:$PATH"` を実行するか、`make setup UV=$HOME/.local/bin/uv` を指定してください。
+- `OPENAI_API_KEY` が見つからない
+  - `.env` が未作成か、値が空の可能性があります。`cp .env.example .env` を確認してください。
+- Ollama がつながらない
+  - `ollama serve` が起動しているか、ポート `11434` が開いているか確認してください。
 
 ---
 
@@ -179,7 +228,7 @@ llm-preference-extraction/
 │   └── output_samples/          # KG 出力サンプル
 │
 ├── notebooks/                   # 分析ノートブック
-├── reports/figures/             # 評価グラフ (PNG / PDF)
+├── reports/figures/             # 評価グラフ (PNG / PDF)　※ README.md 参照ファイルのみ git 追跡
 └── docs/images/                 # スクリーンショット
 ```
 

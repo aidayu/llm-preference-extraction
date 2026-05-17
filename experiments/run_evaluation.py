@@ -10,6 +10,7 @@ src.evaluation モジュールを使用して抽出結果を評価する。
 元ファイル: preference_kg/experiments/run_evaluation.py
 """
 
+import argparse
 import json
 import os
 import re
@@ -32,9 +33,9 @@ from llm_preference_extraction.evaluation import (
 
 # =====================================================================
 # === ユーザー設定 ===
-# 評価したい実験結果のパスをここに貼り付けてください
+# 既定値はNone。評価対象はCLI引数で指定してください。
 # =====================================================================
-EXPERIMENT_RESULTS_PATH = "/home/y-aida/Programs/llm-preference-extraction/data/results/experiments/llama3.1:8b/experiment_results_20260208_035002.json"
+EXPERIMENT_RESULTS_PATH = None
 # =====================================================================
 
 RESULTS_ROOT = PROJECT_ROOT / "data" / "results"
@@ -238,10 +239,15 @@ def save_aggregated_results(
 
 
 def main(
-    experiment_results_path: Path = EXPERIMENT_RESULTS_PATH,
+    experiment_results_path: Path | None = EXPERIMENT_RESULTS_PATH,
     evaluation_output_dir: Path | None = None,
 ):
     """メイン評価関数"""
+    if experiment_results_path is None:
+        print("評価対象の結果ファイルが指定されていません。")
+        print("例: python experiments/run_evaluation.py --results <path-to-results.json>")
+        sys.exit(2)
+
     print("=== 実験結果評価開始 ===")
     print(f"実験結果ファイル: {experiment_results_path}")
 
@@ -294,4 +300,19 @@ def main(
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="嗜好抽出結果の評価スクリプト")
+    parser.add_argument(
+        "--results",
+        type=Path,
+        default=None,
+        help="評価対象の実験結果JSONファイル",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="評価結果CSVの出力ディレクトリ",
+    )
+    args = parser.parse_args()
+
+    main(experiment_results_path=args.results, evaluation_output_dir=args.output_dir)

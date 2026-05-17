@@ -8,6 +8,7 @@ Few-shotプロンプトを用いてデータセットから嗜好を抽出する
 元ファイル: preference_kg/experiments/run_extraction.py
 """
 
+import argparse
 import json
 import os
 import sys
@@ -41,6 +42,9 @@ DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "test.json"
 # デフォルトモデル設定
 DEFAULT_MODEL_NAME = "gpt-4o-mini"
 
+# 実験結果の保存先
+DEFAULT_SAVE_DIR = PROJECT_ROOT / "data" / "results" / "raw" / "experiments"
+
 # Few-shot用のdialogue_id
 # FEW_SHOT_IDS = [0, 18, 46]
 FEW_SHOT_IDS = [0, 1, 2]
@@ -58,7 +62,7 @@ def run_experiment(
     dataset_path: Path = DEFAULT_DATASET_PATH,
     base_url: str | None = None,
     api_key: str | None = None,
-    save_path: Path | None = None,
+    save_dir: Path | None = DEFAULT_SAVE_DIR,
 ) -> list:
     """
     抽出実験を実行する
@@ -68,7 +72,7 @@ def run_experiment(
         dataset_path: データセットのパス
         base_url: Ollama等のローカルサーバーURL（Noneの場合はOpenAI API）
         api_key: APIキー
-        save_path: 結果を保存するパス
+        save_dir: 結果を保存するディレクトリ
 
     Returns:
         list: 抽出結果
@@ -146,13 +150,11 @@ def run_experiment(
         "results": results,
     }
 
-    if save_path:
+    if save_dir is not None:
         # 結果保存
         print("\n結果保存中...")
 
-        if save_path is None:
-            output_dir = PROJECT_ROOT / "data" / "results" / "raw" / "experiments" / model_name
-        else:output_dir = save_path / model_name
+        output_dir = save_dir / model_name
         output_dir.mkdir(parents=True, exist_ok=True)
 
         output_path = output_dir / f"experiment_results_{timestamp}.json"
@@ -180,11 +182,18 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="嗜好抽出実験スクリプト")
     parser.add_argument("--model", type=str, default=DEFAULT_MODEL_NAME)
     parser.add_argument("--dataset", type=Path, default=DEFAULT_DATASET_PATH)
+    parser.add_argument(
+        "--save-dir",
+        type=Path,
+        default=DEFAULT_SAVE_DIR,
+        help="実験結果の保存先ディレクトリ",
+    )
 
     args = parser.parse_args()
 
     model = args.model
     dataset_path = args.dataset
+    save_dir = args.save_dir
 
     # Ollamaモデルのパターンにマッチするかチェック
     ollama_patterns = ["llama", "gemma", "mistral", "phi", "qwen", "codellama"]
@@ -196,6 +205,7 @@ if __name__ == "__main__":
             dataset_path=dataset_path,
             base_url="http://localhost:11434/v1",
             api_key=model,
+            save_dir=save_dir,
         )
     else:
         run_experiment(
@@ -203,4 +213,5 @@ if __name__ == "__main__":
             dataset_path=dataset_path,
             base_url=None,
             api_key=None,
+            save_dir=save_dir,
         )

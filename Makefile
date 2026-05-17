@@ -5,6 +5,16 @@
 PROJECT_NAME = llm-preference-extraction
 PYTHON_VERSION = 3.11
 PYTHON_INTERPRETER = python
+UV ?= uv
+DATASET ?= data/ground_truth/test.json
+SAVE_DIR ?= data/results/raw/experiments
+RESULTS_PATH ?=
+EVAL_OUT_DIR ?=
+CSV_PATH ?=
+PLOT_COMPARE ?=
+PLOT_TYPE ?= both
+
+SHELL := /bin/bash
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -13,15 +23,23 @@ PYTHON_INTERPRETER = python
 ## セットアップ: 仮想環境作成と依存関係インストール
 .PHONY: setup
 setup:
-	uv venv --python $(PYTHON_VERSION)
-	uv sync
+	$(UV) venv --python $(PYTHON_VERSION)
+	$(UV) sync
 	@echo ">>> セットアップ完了。以下でアクティベート:"
 	@echo ">>> source .venv/bin/activate"
 
 ## 依存関係インストール
 .PHONY: install
 install:
-	uv sync
+	$(UV) sync
+
+## 環境チェック
+.PHONY: verify
+verify:
+	@command -v $(UV) >/dev/null 2>&1 || (echo "uv が見つかりません。PATH か UV 変数を確認してください。"; exit 1)
+	@$(PYTHON_INTERPRETER) -c "import sys; print(sys.version); sys.exit(0 if sys.version_info >= (3, 11) else 1)" || (echo "Python 3.11+ が必要です。"; exit 1)
+	@test -f .env || (echo ".env がありません。cp .env.example .env を実行してください。"; exit 1)
+	@echo ">>> OK"
 
 ## テスト実行
 .PHONY: test
@@ -48,17 +66,30 @@ app:
 MODEL ?= gpt-4o-mini
 .PHONY: extract
 extract:
-	$(PYTHON_INTERPRETER) experiments/run_extraction.py --model $(MODEL)
+	$(PYTHON_INTERPRETER) experiments/run_extraction.py --model $(MODEL) --dataset $(DATASET) --save-dir $(SAVE_DIR)
 
 ## 評価実行
 .PHONY: evaluate
 evaluate:
-	$(PYTHON_INTERPRETER) experiments/run_evaluation.py
+	@if [[ -z "$(RESULTS_PATH)" ]]; then echo "RESULTS_PATH を指定してください。"; exit 1; fi
+	$(PYTHON_INTERPRETER) experiments/run_evaluation.py --results $(RESULTS_PATH) $(if $(EVAL_OUT_DIR),--output-dir $(EVAL_OUT_DIR),)
 
-## グラフ描画
+## グラフ描画 (例: make plot RESULTS_PATH=data/results/raw/.../experiment_results_*.json)
 .PHONY: plot
 plot:
-	$(PYTHON_INTERPRETER) experiments/plot_evaluation.py
+	@if [[ -n "$(CSV_PATH)" ]]; then \
+		$(PYTHON_INTERPRETER) experiments/plot_evaluation.py "$(CSV_PATH)" $(if $(PLOT_COMPARE),--compare,) --type $(PLOT_TYPE); \
+	elif [[ -n "$(RESULTS_PATH)" ]]; then \
+		_ts=$$(python -c "import re; m=re.search(r'(\d{8}_\d{6})', '$(RESULTS_PATH)'); print(m.group(1) if m else '')"); \
+		_model=$$(python -c "from pathlib import Path; p=Path('$(RESULTS_PATH)'); print(p.parent.name)"); \
+		_dir="data/results/raw/evaluations/$$_model/$$_ts"; \
+		_csv=$$(ls "$$_dir"/evaluation_*.csv 2>/dev/null | sort | tail -1); \
+		if [[ -z "$$_csv" ]]; then echo "Error: 評価CSVが見つかりません: $$_dir"; exit 1; fi; \
+		echo "評価CSVを使用: $$_csv"; \
+		$(PYTHON_INTERPRETER) experiments/plot_evaluation.py "$$_csv" --type $(PLOT_TYPE); \
+	else \
+		$(PYTHON_INTERPRETER) experiments/plot_evaluation.py; \
+	fi
 
 ## キャッシュ削除
 .PHONY: clean

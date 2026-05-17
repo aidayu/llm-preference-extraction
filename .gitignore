@@ -130,5 +130,7 @@ data/output_samples/raw_chat_logs*
 !data/results/summary/
 !data/output_samples/*.json
 
-# Reports - Ignore PDFs if you want to force PNG usage
-reports/figures/*.pdf
+# Reports - ignore all generated figures except those embedded in README.md
+reports/figures/*
+!reports/figures/comparison_results_macrof1_comparison.png
+!reports/figures/hierarchical_axis_macro_prf_hierarchical.png
