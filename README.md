@@ -206,6 +206,7 @@ llm-preference-extraction/
 │   ├── extractors.py            #   Few-shot 明示的嗜好抽出
 │   ├── reasoners.py             #   暗黙的嗜好推論・統合
 │   ├── graph_builder.py         #   KG トリプレット構築
+│   ├── prompts/                 #   プロンプトテンプレート (CoT / 推論) ※パッケージ同梱
 │   └── evaluation/              #   評価サブパッケージ (8モジュール)
 │       ├── dialogue_evaluator.py
 │       ├── aggregators.py       #     Micro/Macro/Weighted F1
@@ -222,7 +223,6 @@ llm-preference-extraction/
 │   └── components/
 │
 ├── data/
-│   ├── prompts/                 # プロンプトテンプレート (CoT / 推論)
 │   ├── ground_truth/            # DailyDialog アノテーション済データ
 │   ├── results/                 # 評価結果
 │   └── output_samples/          # KG 出力サンプル

@@ -8,22 +8,20 @@
 """
 
 import json
-from pathlib import Path
+from importlib.resources import files
 from typing import Optional
 
 from openai import OpenAI
 
 
 # Paths
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-PROMPTS_DIR = PROJECT_ROOT / "data" / "prompts"
+# パッケージ同梱のプロンプト（インストール先からでも解決できるようリソース参照する）
+PROMPTS_DIR = files("llm_preference_extraction") / "prompts"
 
 
 def load_implicit_inference_prompt(filename: str = "implicit_inference_prompt.txt") -> str:
     """暗黙的嗜好推論用プロンプトを読み込む"""
-    filepath = PROMPTS_DIR / filename
-    with open(filepath, "r", encoding="utf-8") as f:
-        return f.read().strip()
+    return (PROMPTS_DIR / filename).read_text(encoding="utf-8").strip()
 
 
 def infer_implicit_preferences(
