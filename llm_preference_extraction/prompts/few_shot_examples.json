@@ -1,0 +1,108 @@
+[
+  {
+    "dialogue_id": 0,
+    "original_dialogue": "System: I think modern painting means nothing .\nUser: I think so too . It's just pointless .\nSystem: Then why are so many crazy about it\nUser: I don't know.Maybe they are really crazy .\nSystem: Maybe .",
+    "annotations": [
+      {
+        "entity": "modern painting",
+        "axis": "liking",
+        "sub_axis": "identification",
+        "polarity": "positive",
+        "intensity": "high",
+        "context": [
+          "None"
+        ],
+        "explicitness": "explicit"
+      }
+    ]
+  },
+  {
+    "dialogue_id": 18,
+    "original_dialogue": "System: Look ! It ’ s the start of the Olympic Games .\nUser: So what ?\nSystem: You want to watch , don ’ t you ?\nUser: Not really . I couldn ’ t careless about the Olympic Games .\nSystem: Please yourself .",
+    "annotations": [
+      {
+        "entity": "Olympic Games",
+        "axis": "wanting",
+        "sub_axis": "interest",
+        "polarity": "neutral",
+        "intensity": "mid",
+        "context": [
+          "None"
+        ],
+        "explicitness": "explicit"
+      }
+    ]
+  },
+  {
+    "dialogue_id": 46,
+    "original_dialogue": "System: Say , Jim , how about going for a few beers after dinner ?\nUser: You know that is tempting but is really not good for our fitness .\nSystem: What do you mean ? It will help us to relax .\nUser: Do you really think so ? I don't . It will just make us fat and act silly . Remember last time ?\nSystem: I guess you are right.But what shall we do ? I don't feel like sitting at home .\nUser: I suggest a walk over to the gym where we can play pingpong and meet some of our friends .\nSystem: That's a good idea . I hear Mary and Sally often go there to play pingpong.Perhaps we can make a foursome with them .\nUser: Sounds great to me ! If they are willing , we could ask them to go dancing with us.That is excellent exercise and fun , too .\nSystem: Good.Let ' s go now .\nUser: All right .",
+    "annotations": [
+      {
+        "entity": "beer",
+        "axis": "liking",
+        "sub_axis": "aesthetic/sensory",
+        "polarity": "positive",
+        "intensity": "mid",
+        "context": [
+          "Night"
+        ],
+        "explicitness": "explicit"
+      },
+      {
+        "entity": "beer",
+        "axis": "need",
+        "sub_axis": "personal",
+        "polarity": "negative",
+        "intensity": "mid",
+        "context": [
+          "None"
+        ],
+        "explicitness": "explicit"
+      },
+      {
+        "entity": "pinpong",
+        "axis": "wanting",
+        "sub_axis": "goal",
+        "polarity": "positive",
+        "intensity": "mid",
+        "context": [
+          "group"
+        ],
+        "explicitness": "explicit"
+      },
+      {
+        "entity": "dancing",
+        "axis": "wanting",
+        "sub_axis": "goal",
+        "polarity": "positive",
+        "intensity": "mid",
+        "context": [
+          "group"
+        ],
+        "explicitness": "explicit"
+      },
+      {
+        "entity": "dancing",
+        "axis": "need",
+        "sub_axis": "functional",
+        "polarity": "positive",
+        "intensity": "mid",
+        "context": [
+          "group"
+        ],
+        "explicitness": "explicit"
+      },
+      {
+        "entity": "dancing",
+        "axis": "liking",
+        "sub_axis": "stimulation",
+        "polarity": "positive",
+        "intensity": "mid",
+        "context": [
+          "group"
+        ],
+        "explicitness": "explicit"
+      }
+    ]
+  }
+]

@@ -32,6 +32,38 @@ def load_schema(schema_name: str = "schema_template_cot.json") -> dict:
     return json.loads((PROMPTS_DIR / schema_name).read_text(encoding="utf-8"))
 
 
+def load_few_shot_examples(filename: str = "few_shot_examples.json") -> list[dict]:
+    """パッケージ同梱のFew-shot例（DailyDialog dialogue_id 0/18/46）を読み込む"""
+    return json.loads((PROMPTS_DIR / filename).read_text(encoding="utf-8"))
+
+
+def build_extraction_prompt(
+    dataset: Optional[list[dict]] = None,
+    few_shot_ids: Optional[list[int]] = None,
+    template_name: str = "few_shot_extract_template_cot.txt",
+) -> str:
+    """
+    抽出用のsystem promptを組み立てる
+
+    テンプレート中の {few_shot_examples} をFew-shot例で置換する。
+    dataset未指定の場合はパッケージ同梱のFew-shot例を使う。
+
+    Args:
+        dataset: Few-shot例の供給元データセット（Noneなら同梱例）
+        few_shot_ids: Few-shot例に使うdialogue_id（Noneならdataset全件）
+
+    Returns:
+        str: {few_shot_examples} を置換済みのsystem prompt
+    """
+    if dataset is None:
+        dataset = load_few_shot_examples()
+    if few_shot_ids is None:
+        few_shot_ids = [d["dialogue_id"] for d in dataset]
+
+    examples_text = create_few_shot_examples(dataset, few_shot_ids)
+    return load_prompt_template(template_name).replace("{few_shot_examples}", examples_text)
+
+
 def create_client(base_url: Optional[str] = None, api_key: Optional[str] = None) -> OpenAI:
     """
     モデル設定に応じたOpenAI clientを作成
