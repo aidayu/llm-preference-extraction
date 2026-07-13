@@ -9,7 +9,7 @@
 
 import json
 import os
-from pathlib import Path
+from importlib.resources import files
 from typing import Optional
 
 from dotenv import load_dotenv
@@ -18,23 +18,18 @@ from openai import OpenAI
 load_dotenv()
 
 # Paths
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = PROJECT_ROOT / "data"
-PROMPTS_DIR = DATA_DIR / "prompts"
+# パッケージ同梱のプロンプト（インストール先からでも解決できるようリソース参照する）
+PROMPTS_DIR = files("llm_preference_extraction") / "prompts"
 
 
 def load_prompt_template(template_name: str = "few_shot_extract_template_cot.txt") -> str:
     """Few-shotプロンプトテンプレートを読み込む"""
-    filepath = PROMPTS_DIR / template_name
-    with open(filepath, "r", encoding="utf-8") as f:
-        return f.read().strip()
+    return (PROMPTS_DIR / template_name).read_text(encoding="utf-8").strip()
 
 
 def load_schema(schema_name: str = "schema_template_cot.json") -> dict:
     """JSONスキーマを読み込む"""
-    filepath = PROMPTS_DIR / schema_name
-    with open(filepath, "r", encoding="utf-8") as f:
-        return json.load(f)
+    return json.loads((PROMPTS_DIR / schema_name).read_text(encoding="utf-8"))
 
 
 def create_client(base_url: Optional[str] = None, api_key: Optional[str] = None) -> OpenAI:

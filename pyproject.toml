@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "llm-preference-extraction"
-version = "0.1.0"
+version = "0.2.0"
 description = "LLMを用いた対話からの嗜好抽出と知識グラフ構築"
 authors = [
   { name = "Yuto Aida" },
