@@ -30,6 +30,10 @@ dev = [
     "pytest",
     "ruff",
 ]
+cost = [
+    "pyyaml>=6.0.3",
+    "tiktoken>=0.13.0",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["llm_preference_extraction", "experiments"]

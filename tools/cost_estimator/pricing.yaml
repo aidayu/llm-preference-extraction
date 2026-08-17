@@ -1,0 +1,53 @@
+# モデル別の API 単価（USD / 100万トークン）。値上げ・モデル追加はこのファイルだけ直す。
+# 各エントリに出典URLと価格の時点を必ず併記すること。
+#
+# is_local: true にするとローカル実行（API課金なし）扱いになり単価は無視され0になる。
+# cached_input_discount: プロンプトキャッシュのヒット分に適用される割引率
+#   （0.9 = 標準入力単価の90%引き）。未指定ならキャッシュ割引なしとして扱う。
+
+models:
+  # --- OpenAI GPT-5.6 系（Sol/Terra/Luna の3階層） ---
+  gpt-5.6-sol:
+    input_per_mtok: 5.00
+    output_per_mtok: 30.00
+    cached_input_discount: 0.9
+    source: "https://developers.openai.com/api/docs/pricing"
+    priced_at: "2026-07-30"
+
+  gpt-5.6-terra:
+    input_per_mtok: 2.50
+    output_per_mtok: 15.00
+    cached_input_discount: 0.9
+    source: "https://developers.openai.com/api/docs/pricing"
+    priced_at: "2026-07-30"
+
+  gpt-5.6-luna:
+    input_per_mtok: 1.00
+    output_per_mtok: 6.00
+    cached_input_discount: 0.9
+    source: "https://developers.openai.com/api/docs/pricing"
+    priced_at: "2026-07-30"
+
+  # --- OpenAI GPT-4o 系（run_extraction.py の既定は gpt-4o-mini） ---
+  gpt-4o:
+    input_per_mtok: 2.50
+    output_per_mtok: 10.00
+    source: "https://developers.openai.com/api/docs/pricing"
+    priced_at: "2026-07-30"
+
+  gpt-4o-mini:
+    input_per_mtok: 0.15
+    output_per_mtok: 0.60
+    source: "https://developers.openai.com/api/docs/pricing"
+    priced_at: "2026-07-30"
+
+  # --- ローカル（ollama）実行。API 課金なし ---
+  gemma4:31b:
+    is_local: true
+    source: "ローカル ollama 実行（API課金なし）"
+    priced_at: "-"
+
+  gemma4:e4b:
+    is_local: true
+    source: "ローカル ollama 実行（API課金なし）"
+    priced_at: "-"
