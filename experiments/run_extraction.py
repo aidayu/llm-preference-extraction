@@ -36,8 +36,10 @@ load_dotenv()
 # === ユーザー設定 ===
 # =====================================================================
 # データセットパス
-# DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "dailydialog_annotated_integrated.json"
-DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "test.json"
+# FEW_SHOT_IDS = [0, 18, 46] は 50件版にのみ存在するため、こちらを既定にする。
+# 動作確認用の test.json を使うときは --dataset と --few-shot-ids を併せて指定すること。
+DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "dailydialog_annotated_integrated.json"
+# DEFAULT_DATASET_PATH = PROJECT_ROOT / "data" / "ground_truth" / "test.json"
 
 # デフォルトモデル設定
 DEFAULT_MODEL_NAME = "gpt-4o-mini"
@@ -46,8 +48,9 @@ DEFAULT_MODEL_NAME = "gpt-4o-mini"
 DEFAULT_SAVE_DIR = PROJECT_ROOT / "data" / "results" / "raw" / "experiments"
 
 # Few-shot用のdialogue_id
-# FEW_SHOT_IDS = [0, 18, 46]
-FEW_SHOT_IDS = [0, 1, 2]
+# 他モデル（gpt-5.2 / gpt-4o / gpt-4o-mini / gemma3 / llama3.1）の実験と揃える正式設定。
+# これらの id は 50件版データセットにのみ存在する（test.json は id 0-10 のみ）。
+FEW_SHOT_IDS = [0, 18, 46]
 # =====================================================================
 
 
@@ -63,6 +66,7 @@ def run_experiment(
     base_url: str | None = None,
     api_key: str | None = None,
     save_dir: Path | None = DEFAULT_SAVE_DIR,
+    few_shot_ids: list[int] | None = None,
 ) -> list:
     """
     抽出実験を実行する
@@ -73,15 +77,18 @@ def run_experiment(
         base_url: Ollama等のローカルサーバーURL（Noneの場合はOpenAI API）
         api_key: APIキー
         save_dir: 結果を保存するディレクトリ
+        few_shot_ids: Few-shot に使う dialogue_id（Noneなら FEW_SHOT_IDS）
 
     Returns:
         list: 抽出結果
     """
+    few_shot_ids = list(FEW_SHOT_IDS if few_shot_ids is None else few_shot_ids)
+
     print(f"\n{'='*60}")
     print(f"=== 嗜好抽出実験開始: {model_name} ===")
     print(f"{'='*60}")
     print(f"データセット: {dataset_path}")
-    print(f"Few-shot dialogue_ids: {FEW_SHOT_IDS}")
+    print(f"Few-shot dialogue_ids: {few_shot_ids}")
 
     # クライアント作成
     client = create_client(base_url, api_key)
@@ -94,7 +101,17 @@ def run_experiment(
 
     # Few-shot例の作成
     print("\n[2/4] Few-shot例作成中...")
-    few_shot_examples_text = create_few_shot_examples(dataset, FEW_SHOT_IDS)
+    # 指定 id がデータセットに無いと警告だけ出て例が減り、条件が変わったまま完走してしまう。
+    # 実験条件の取り違えは結果を無言で壊すのでここで止める。
+    available_ids = {d["dialogue_id"] for d in dataset}
+    missing_ids = [i for i in few_shot_ids if i not in available_ids]
+    if missing_ids:
+        raise SystemExit(
+            f"Few-shot dialogue_id {missing_ids} が {dataset_path.name} に存在しません。\n"
+            f"  データセットの id 範囲: {min(available_ids)}-{max(available_ids)}\n"
+            f"  --dataset か --few-shot-ids を見直してください。"
+        )
+    few_shot_examples_text = create_few_shot_examples(dataset, few_shot_ids)
 
     # プロンプトテンプレート読み込み
     print("\n[3/4] プロンプトテンプレート読み込み中...")
@@ -105,7 +122,7 @@ def run_experiment(
     schema = load_schema()
 
     # テスト対象の対話を取得（Few-shot例を除く）
-    test_dialogues = [d for d in dataset if d["dialogue_id"] not in FEW_SHOT_IDS]
+    test_dialogues = [d for d in dataset if d["dialogue_id"] not in few_shot_ids]
     print(f"テスト対話数: {len(test_dialogues)}")
 
     # 嗜好抽出実行
@@ -143,7 +160,7 @@ def run_experiment(
         "experiment_info": {
             "timestamp": timestamp,
             "dataset_path": str(dataset_path),
-            "few_shot_ids": FEW_SHOT_IDS,
+            "few_shot_ids": few_shot_ids,
             "total_test_dialogues": len(test_dialogues),
             "model": model_name,
         },
@@ -188,12 +205,23 @@ if __name__ == "__main__":
         default=DEFAULT_SAVE_DIR,
         help="実験結果の保存先ディレクトリ",
     )
+    parser.add_argument(
+        "--few-shot-ids",
+        type=str,
+        default=None,
+        help=f"Few-shot に使う dialogue_id のカンマ区切り（既定: {','.join(map(str, FEW_SHOT_IDS))}）",
+    )
 
     args = parser.parse_args()
 
     model = args.model
     dataset_path = args.dataset
     save_dir = args.save_dir
+    few_shot_ids = (
+        [int(x) for x in args.few_shot_ids.split(",") if x.strip()]
+        if args.few_shot_ids
+        else None
+    )
 
     # Ollamaモデルのパターンにマッチするかチェック
     ollama_patterns = ["llama", "gemma", "mistral", "phi", "qwen", "codellama"]
@@ -206,6 +234,7 @@ if __name__ == "__main__":
             base_url="http://localhost:11434/v1",
             api_key=model,
             save_dir=save_dir,
+            few_shot_ids=few_shot_ids,
         )
     else:
         run_experiment(
@@ -214,4 +243,5 @@ if __name__ == "__main__":
             base_url=None,
             api_key=None,
             save_dir=save_dir,
+            few_shot_ids=few_shot_ids,
         )
