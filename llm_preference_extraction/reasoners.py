@@ -13,6 +13,8 @@ from typing import Optional
 
 from openai import OpenAI
 
+from llm_preference_extraction.extractors import supports_temperature
+
 
 # Paths
 # パッケージ同梱のプロンプト（インストール先からでも解決できるようリソース参照する）
@@ -49,6 +51,11 @@ def infer_implicit_preferences(
     explicit_entities = [p.get("entity", "") for p in explicit_preferences]
     explicit_info = f"\n既に抽出済みの明示的嗜好: {explicit_entities}" if explicit_entities else ""
 
+    # GPT-5 系は temperature の明示指定を受け付けないため省略する（extractors と同じ扱い）。
+    kwargs = {}
+    if supports_temperature(model_name):
+        kwargs["temperature"] = 0
+
     try:
         completion = client.chat.completions.create(
             model=model_name,
@@ -60,7 +67,7 @@ def infer_implicit_preferences(
                 },
             ],
             response_format={"type": "json_object"},
-            temperature=0,
+            **kwargs,
         )
         result = json.loads(completion.choices[0].message.content)
         return result

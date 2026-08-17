@@ -64,6 +64,21 @@ def build_extraction_prompt(
     return load_prompt_template(template_name).replace("{few_shot_examples}", examples_text)
 
 
+# temperature の指定を受け付けないモデル名の接頭辞。
+# GPT-5 系（gpt-5.6-terra 等）は既定値(1)のみ対応で、0 を渡すと 400 エラーになる。
+NO_TEMPERATURE_PREFIXES = ("gpt-5", "o1", "o3", "o4")
+
+
+def supports_temperature(model_name: str) -> bool:
+    """モデルが temperature の明示指定を受け付けるか。
+
+    再現性のため既定では temperature=0 を使いたいが、GPT-5 系・o シリーズは
+    既定値しか受け付けない。該当モデルでは呼び出し側でパラメータを省略する。
+    """
+    normalized = model_name.lower().lstrip("/")
+    return not normalized.startswith(NO_TEMPERATURE_PREFIXES)
+
+
 def create_client(base_url: Optional[str] = None, api_key: Optional[str] = None) -> OpenAI:
     """
     モデル設定に応じたOpenAI clientを作成
@@ -155,6 +170,12 @@ def extract_preferences(
     Returns:
         抽出結果（JSON）
     """
+    # GPT-5 系は temperature を既定値(1)しか受け付けず、0 を渡すと 400 になる。
+    # その場合はパラメータ自体を省略する（既定値が使われる）。
+    kwargs = {}
+    if supports_temperature(model_name):
+        kwargs["temperature"] = 0
+
     try:
         completion = client.chat.completions.create(
             model=model_name,
@@ -166,7 +187,7 @@ def extract_preferences(
                 },
             ],
             response_format={"type": "json_schema", "json_schema": schema},
-            temperature=0,
+            **kwargs,
         )
 
         result = json.loads(completion.choices[0].message.content)
