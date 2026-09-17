@@ -24,4 +24,4 @@ allowed-tools: Read, Bash(gh issue create:*), Bash(gh issue view:*), Bash(git sw
 5. 承認されたら `gh issue create --title "..." --body-file <一時ファイル>` で作成し、
    Issue 番号と URL を報告する。
 6. 続けて実装に入る指示があれば、`git switch -c <型>/<番号>-<slug>` で
-   ブランチを切ってから着手する。
+   ブランチを切り、**`/impl <repo> <番号>` スキルで実装する**（Claude が直接コードを書かない）。

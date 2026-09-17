@@ -14,6 +14,14 @@
   そこから逸れそうになったら実装を進めず、本文の更新を先に提案すること。
 - 判定基準を結果に合わせて後から書き換えてはならない。
 
+### 実装（/impl: Claude 計画 → Codex 実装 → Claude レビュー）
+- **コードの実装・修正は必ず `/impl <repo> <Issue番号>` で行う。Claude が直接コードを書かない。**
+  Claude は Issue から実装計画を作り、Codex が実装し、Claude がレビューして修正を Codex に戻す。
+- 対象外（Claude が直接編集してよい）: ドキュメント、CLAUDE.md、Issue テンプレート等のコード以外。
+- 計画は `../docs/plans/<repo>/<番号>-<slug>.md`、実行ログは `../.ai-logs/<repo>/<番号>-<slug>/`。
+  計画は承認後に Issue へ「## 実装計画」としてコメントする。
+- 詳細は `../docs/issue-driven-research-framework.md` の §5.8。
+
 ### Git
 - 着手時に `git switch -c <feat|exp>/<番号>-<slug>` でブランチを切る。
 - コミットメッセージ末尾に `Refs #<番号>`。
@@ -42,5 +50,6 @@
 
 ### スラッシュコマンド
 - `/new-issue <やりたいこと>` — インタビュー形式で Issue を起票
+- `/impl <repo> <番号>` — Issue の実装を Claude 計画 → Codex 実装 → Claude レビューで行う
 - `/close-issue <番号>` — 事前の判定基準に照らして結論を起草しクローズ
 - `/explain-diff <PR番号 or ブランチ>` — 差分の解説ページを作り、クイズで理解を確認
