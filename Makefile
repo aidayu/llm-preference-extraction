@@ -62,7 +62,7 @@ format:
 app:
 	streamlit run app/main.py
 
-## 抽出実験実行 (例: make extract MODEL=gpt-4o)
+## 抽出実験実行 (例: make extract MODEL=gpt-4o / make extract MODEL=gpt-oss:20b)
 MODEL ?= gpt-4o-mini
 .PHONY: extract
 extract:
