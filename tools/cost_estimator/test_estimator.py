@@ -74,3 +74,12 @@ def test_unknown_model_raises():
 
     with pytest.raises(KeyError):
         _est("gpt-nonexistent")
+
+
+def test_gpt6_luna_estimate():
+    est = _est("gpt-6-luna")
+    assert est.calls > 0
+    assert not est.is_local
+    assert abs(est.input_cost - est.input_tokens / 1_000_000 * 0.10) < 1e-9
+    assert abs(est.output_cost - est.output_tokens / 1_000_000 * 0.50) < 1e-9
+    assert abs(est.total_cost - est.input_cost - est.output_cost) < 1e-9

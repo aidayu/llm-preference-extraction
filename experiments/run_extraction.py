@@ -54,6 +54,12 @@ FEW_SHOT_IDS = [0, 18, 46]
 # =====================================================================
 
 
+def is_ollama_model(model: str) -> bool:
+    """モデル名が Ollama モデルのパターンに一致するか。"""
+    ollama_patterns = ["llama", "gemma", "mistral", "phi", "qwen", "codellama", "gpt-oss"]
+    return any(pattern in model.lower() for pattern in ollama_patterns)
+
+
 def load_dataset(dataset_path: Path) -> list:
     """データセットを読み込む"""
     with open(dataset_path, "r", encoding="utf-8") as f:
@@ -224,10 +230,7 @@ if __name__ == "__main__":
     )
 
     # Ollamaモデルのパターンにマッチするかチェック
-    ollama_patterns = ["llama", "gemma", "mistral", "phi", "qwen", "codellama"]
-    is_ollama = any(pattern in model.lower() for pattern in ollama_patterns)
-
-    if is_ollama:
+    if is_ollama_model(model):
         run_experiment(
             model_name=model,
             dataset_path=dataset_path,

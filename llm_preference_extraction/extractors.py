@@ -65,14 +65,14 @@ def build_extraction_prompt(
 
 
 # temperature の指定を受け付けないモデル名の接頭辞。
-# GPT-5 系（gpt-5.6-terra 等）は既定値(1)のみ対応で、0 を渡すと 400 エラーになる。
-NO_TEMPERATURE_PREFIXES = ("gpt-5", "o1", "o3", "o4")
+# GPT-5 / GPT-6 系（gpt-5.6-terra 等）は既定値(1)のみ対応で、0 を渡すと 400 エラーになる。
+NO_TEMPERATURE_PREFIXES = ("gpt-5", "gpt-6", "o1", "o3", "o4")
 
 
 def supports_temperature(model_name: str) -> bool:
     """モデルが temperature の明示指定を受け付けるか。
 
-    再現性のため既定では temperature=0 を使いたいが、GPT-5 系・o シリーズは
+    再現性のため既定では temperature=0 を使いたいが、GPT-5 / GPT-6 系・o シリーズは
     既定値しか受け付けない。該当モデルでは呼び出し側でパラメータを省略する。
     """
     normalized = model_name.lower().lstrip("/")
@@ -170,7 +170,7 @@ def extract_preferences(
     Returns:
         抽出結果（JSON）
     """
-    # GPT-5 系は temperature を既定値(1)しか受け付けず、0 を渡すと 400 になる。
+    # GPT-5 / GPT-6 系は temperature を既定値(1)しか受け付けず、0 を渡すと 400 になる。
     # その場合はパラメータ自体を省略する（既定値が使われる）。
     kwargs = {}
     if supports_temperature(model_name):

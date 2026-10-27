@@ -6,6 +6,12 @@
 #   （0.9 = 標準入力単価の90%引き）。未指定ならキャッシュ割引なしとして扱う。
 
 models:
+  gpt-6-luna:
+    input_per_mtok: 0.10
+    output_per_mtok: 0.50
+    source: "https://openrouter.ai/api/v1/models (openai/gpt-6-luna)"
+    priced_at: "2026-10-15"
+
   # --- OpenAI GPT-5.6 系（Sol/Terra/Luna の3階層） ---
   gpt-5.6-sol:
     input_per_mtok: 5.00
